@@ -12,6 +12,7 @@
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="https://liuliansp.github.io/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
   
@@ -171,7 +172,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>一、安装最新版nodejs<br>更新ubuntu软件源</p>
+<div><br>    sudo apt-get update<br>    sudo apt-get install -y python-software-properties software-properties-common<br>    sudo add-apt-repository ppa:chris-lea/node.js<br>    sudo apt-get update<br></div><br>安装nodejs<br><div><br>    sudo apt-get install nodejs<br>    sudo apt install nodejs-legacy<br>    sudo apt install npm<br></div><br>更新npm的包镜像源，方便快速下载<br><div><br>    sudo npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a><br>    sudo npm config list<br></div><br>全局安装n管理器(用于管理nodejs版本)<br>    <div><br>        sudo npm install n -g<br>    </div><br>    apt 找不到文件<br>    <div><br>        // error code<br>W: The repository ‘<a href="http://ppa.launchpad.net/chris-lea/node.js/ubuntu" target="_blank" rel="external">http://ppa.launchpad.net/chris-lea/node.js/ubuntu</a> xenial Release’ does not have a Release file.<br>N: Data from such a repository can’t be authenticated and is therefore potentially dangerous to use.<br>N: See apt-secure(8) manpage for repository creation and user configuration details.<br>E: Failed to fetch <a href="http://ppa.launchpad.net/chris-lea/node.js/ubuntu/dists/xenial/main/binary-amd64/Packages" target="_blank" rel="external">http://ppa.launchpad.net/chris-lea/node.js/ubuntu/dists/xenial/main/binary-amd64/Packages</a>  404  Not Found<br>E: Some index files failed to download. They have been ignored, or old ones used instead.<br><br>// A: 修改node相关文件：/etc/apt/sources.list.d/chris-lea-ubuntu-node_js-xenial.list<br>deb <a href="http://ppa.launchpad.net/chris-lea/node.js/ubuntu" target="_blank" rel="external">http://ppa.launchpad.net/chris-lea/node.js/ubuntu</a> trusty main<br>deb-src <a href="http://ppa.launchpad.net/chris-lea/node.js/ubuntu" target="_blank" rel="external">http://ppa.launchpad.net/chris-lea/node.js/ubuntu</a> trusty main<br>    </div>
       
 
       

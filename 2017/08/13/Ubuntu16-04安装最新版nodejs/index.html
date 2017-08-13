@@ -8,13 +8,17 @@
   <link rel="dns-prefetch" href="https://liuliansp.github.io">
   <title>Ubuntu16.04安装最新版nodejs | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="一、安装最新版nodejs更新ubuntu软件源     sudo apt-get update    sudo apt-get install -y python-software-properties software-properties-common    sudo add-apt-repository ppa:chris-lea/node.js    sudo apt-get updat">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu16.04安装最新版nodejs">
 <meta property="og:url" content="https://liuliansp.github.io/2017/08/13/Ubuntu16-04安装最新版nodejs/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2017-08-13T14:49:25.755Z">
+<meta property="og:description" content="一、安装最新版nodejs更新ubuntu软件源     sudo apt-get update    sudo apt-get install -y python-software-properties software-properties-common    sudo add-apt-repository ppa:chris-lea/node.js    sudo apt-get updat">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-13T15:47:56.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu16.04安装最新版nodejs">
+<meta name="twitter:description" content="一、安装最新版nodejs更新ubuntu软件源     sudo apt-get update    sudo apt-get install -y python-software-properties software-properties-common    sudo add-apt-repository ppa:chris-lea/node.js    sudo apt-get updat">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -170,7 +174,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>一、安装最新版nodejs<br>更新ubuntu软件源</p>
+<div><br>    sudo apt-get update<br>    sudo apt-get install -y python-software-properties software-properties-common<br>    sudo add-apt-repository ppa:chris-lea/node.js<br>    sudo apt-get update<br></div><br>安装nodejs<br><div><br>    sudo apt-get install nodejs<br>    sudo apt install nodejs-legacy<br>    sudo apt install npm<br></div><br>更新npm的包镜像源，方便快速下载<br><div><br>    sudo npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a><br>    sudo npm config list<br></div><br>全局安装n管理器(用于管理nodejs版本)<br>    <div><br>        sudo npm install n -g<br>    </div><br>    apt 找不到文件<br>    <div><br>        // error code<br>W: The repository ‘<a href="http://ppa.launchpad.net/chris-lea/node.js/ubuntu" target="_blank" rel="external">http://ppa.launchpad.net/chris-lea/node.js/ubuntu</a> xenial Release’ does not have a Release file.<br>N: Data from such a repository can’t be authenticated and is therefore potentially dangerous to use.<br>N: See apt-secure(8) manpage for repository creation and user configuration details.<br>E: Failed to fetch <a href="http://ppa.launchpad.net/chris-lea/node.js/ubuntu/dists/xenial/main/binary-amd64/Packages" target="_blank" rel="external">http://ppa.launchpad.net/chris-lea/node.js/ubuntu/dists/xenial/main/binary-amd64/Packages</a>  404  Not Found<br>E: Some index files failed to download. They have been ignored, or old ones used instead.<br><br>// A: 修改node相关文件：/etc/apt/sources.list.d/chris-lea-ubuntu-node_js-xenial.list<br>deb <a href="http://ppa.launchpad.net/chris-lea/node.js/ubuntu" target="_blank" rel="external">http://ppa.launchpad.net/chris-lea/node.js/ubuntu</a> trusty main<br>deb-src <a href="http://ppa.launchpad.net/chris-lea/node.js/ubuntu" target="_blank" rel="external">http://ppa.launchpad.net/chris-lea/node.js/ubuntu</a> trusty main<br>    </div>
       
 
       
@@ -183,7 +188,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃鸡<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     
