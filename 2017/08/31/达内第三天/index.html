@@ -8,17 +8,18 @@
   <link rel="dns-prefetch" href="https://liuliansp.github.io">
   <title>达内第三天 | SP_Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="技术掌握人生">
+  <meta name="description" content="控件的实例化Button button1=(Button)findViewById(button1);setText(1+2);(报错原因，是找不到resid，int代表的是资源的ID)  setAutoLinkMask(int) focusable:聚焦（默认是（true） enable：可点击（默认是true）* gone(消失而不是不显示)  setMargins1234RelativeLa">
+<meta name="keywords" content="培训,Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="达内第三天">
 <meta property="og:url" content="https://liuliansp.github.io/2017/08/31/达内第三天/index.html">
 <meta property="og:site_name" content="SP_Blog">
-<meta property="og:description" content="技术掌握人生">
+<meta property="og:description" content="控件的实例化Button button1=(Button)findViewById(button1);setText(1+2);(报错原因，是找不到resid，int代表的是资源的ID)  setAutoLinkMask(int) focusable:聚焦（默认是（true） enable：可点击（默认是true）* gone(消失而不是不显示)  setMargins1234RelativeLa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-30T23:22:12.704Z">
+<meta property="og:updated_time" content="2017-09-11T02:50:36.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="达内第三天">
-<meta name="twitter:description" content="技术掌握人生">
+<meta name="twitter:description" content="控件的实例化Button button1=(Button)findViewById(button1);setText(1+2);(报错原因，是找不到resid，int代表的是资源的ID)  setAutoLinkMask(int) focusable:聚焦（默认是（true） enable：可点击（默认是true）* gone(消失而不是不显示)  setMargins1234RelativeLa">
   
     <link rel="alternative" href="/atom.xml" title="SP_Blog" type="application/atom+xml">
   
@@ -174,7 +175,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>控件的实例化<br>Button button1=(Button)findViewById(button1);<br>setText(1+2);(报错原因，是找不到resid，int代表的是资源的ID)</p>
+<ul>
+<li>setAutoLinkMask(int)</li>
+<li>focusable:聚焦（默认是（true）</li>
+<li>enable：可点击（默认是true）<pre><code>* gone(消失而不是不显示)
+</code></pre></li>
+<li>setMargins<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">RelativeLayout.LayoutParams params=<span class="keyword">new</span> RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,</div><div class="line">                ViewGroup.LayoutParams.WRAP_CONTENT);</div><div class="line">        params.setMargins(<span class="number">10</span>,<span class="number">10</span>,<span class="number">10</span>,<span class="number">10</span>);</div><div class="line">        bt.setLayoutParams(params);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>得到对象的方式：<br>1.调用构造方法<br>2.调用待返回值的方法</li>
+</ul>
+<hr>
+<h3 id="dialog的使用"><a href="#dialog的使用" class="headerlink" title="dialog的使用"></a>dialog的使用</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">AlertDialog.Builder builder=<span class="keyword">new</span> AlertDialog.Builder(<span class="keyword">this</span>);</div><div class="line">                builder.setTitle(<span class="string">"设置"</span>).setMessage(<span class="string">"苟利国家生死以"</span>).setPositiveButton(<span class="string">"确定"</span>, <span class="keyword">new</span> DialogInterface.OnClickListener() &#123;</div><div class="line">                    <span class="meta">@Override</span></div><div class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(DialogInterface dialogInterface , <span class="keyword">int</span> which)</span> </span>&#123;</div><div class="line">                       dialogInterface.dismiss();</div><div class="line">                        Toast.makeText(MainActivity.<span class="keyword">this</span>,<span class="string">"确定"</span>, Toast.LENGTH_SHORT);</div><div class="line"></div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">                builder.setNegativeButton(<span class="string">"取消"</span>, <span class="keyword">new</span> DialogInterface.OnClickListener() &#123;</div><div class="line">                    <span class="meta">@Override</span></div><div class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(DialogInterface dialogInterface, <span class="keyword">int</span> which)</span> </span>&#123;</div><div class="line">                        dialogInterface.dismiss();</div><div class="line">                        Toast.makeText(MainActivity.<span class="keyword">this</span>,<span class="string">"取消"</span>,Toast.LENGTH_SHORT);</div><div class="line"></div><div class="line">                    &#125;</div><div class="line">                &#125;).show();</div></pre></td></tr></table></figure>
+
       
 
       
@@ -208,6 +224,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">培训</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -271,6 +302,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/09/01/达内第四天/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          达内第四天
+        
+      </div>
+    </a>
   
   
     <a href="/2017/08/30/达内第二天/" id="article-nav-older" class="article-nav-link-wrap">
@@ -410,7 +450,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -422,7 +462,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
