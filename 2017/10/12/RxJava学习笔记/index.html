@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://liuliansp.github.io">
-  <title>hexo-asset-image | SP_Blog</title>
+  <title>RxJava学习笔记 | SP_Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo 插入图片1npm install hexo-asset-image --save">
-<meta name="keywords" content="hexo">
+  <meta name="description" content="什么是响应式编程 是一种基于异步数据流概念的编程模式（可以想象河流的特点：） 响应式编程–关键概念：事件   RxJava是什么? 异步数据处理库 扩展的观察者模式  RxJava特点： &amp;lt; 1MB Jar 轻量级框架 支持Java 8 lambda 支持Java6 + &amp;amp;Android2.3+ 支持异步和同步扩展的观察者模式 onCompleted()事物完成事件&amp;lt;就是事件结">
+<meta name="keywords" content="RxJava">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo-asset-image">
-<meta property="og:url" content="https://liuliansp.github.io/2017/08/16/hexo-asset-image/index.html">
+<meta property="og:title" content="RxJava学习笔记">
+<meta property="og:url" content="https://liuliansp.github.io/2017/10/12/RxJava学习笔记/index.html">
 <meta property="og:site_name" content="SP_Blog">
-<meta property="og:description" content="hexo 插入图片1npm install hexo-asset-image --save">
+<meta property="og:description" content="什么是响应式编程 是一种基于异步数据流概念的编程模式（可以想象河流的特点：） 响应式编程–关键概念：事件   RxJava是什么? 异步数据处理库 扩展的观察者模式  RxJava特点： &amp;lt; 1MB Jar 轻量级框架 支持Java 8 lambda 支持Java6 + &amp;amp;Android2.3+ 支持异步和同步扩展的观察者模式 onCompleted()事物完成事件&amp;lt;就是事件结">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://liuliansp.github.io/2017/08/16/hexo-asset-image/mm.jpg">
-<meta property="og:updated_time" content="2017-08-16T03:35:48.969Z">
+<meta property="og:updated_time" content="2017-10-14T04:52:15.711Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo-asset-image">
-<meta name="twitter:description" content="hexo 插入图片1npm install hexo-asset-image --save">
-<meta name="twitter:image" content="https://liuliansp.github.io/2017/08/16/hexo-asset-image/mm.jpg">
+<meta name="twitter:title" content="RxJava学习笔记">
+<meta name="twitter:description" content="什么是响应式编程 是一种基于异步数据流概念的编程模式（可以想象河流的特点：） 响应式编程–关键概念：事件   RxJava是什么? 异步数据处理库 扩展的观察者模式  RxJava特点： &amp;lt; 1MB Jar 轻量级框架 支持Java 8 lambda 支持Java6 + &amp;amp;Android2.3+ 支持异步和同步扩展的观察者模式 onCompleted()事物完成事件&amp;lt;就是事件结">
   
     <link rel="alternative" href="/atom.xml" title="SP_Blog" type="application/atom+xml">
   
@@ -157,30 +155,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo-asset-image" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-RxJava学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      hexo-asset-image
+      RxJava学习笔记
     </h1>
   
 
         
-        <a href="/2017/08/16/hexo-asset-image/" class="archive-article-date">
-  	<time datetime="2017-08-16T03:35:48.969Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-16</time>
+        <a href="/2017/10/12/RxJava学习笔记/" class="archive-article-date">
+  	<time datetime="2017-10-12T01:20:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="hexo-插入图片"><a href="#hexo-插入图片" class="headerlink" title="hexo 插入图片"></a>hexo 插入图片</h3><p><img src="/2017/08/16/hexo-asset-image/mm.jpg" alt="mm"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-asset-image --save</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>1.1.首先确认_config.yml 中有 post_asset_folder:true。<br>Hexo 提供了一种更方便管理 Asset 的设定：post_asset_folder<br>当您设置post_asset_folder为true参数后，在建立文件时，Hexo<br>会自动建立一个与文章同名的文件夹，您可以把与该文章相关的所有资源都放到那个文件夹，如此一来，您便可以更方便的使用资源。</p>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">MacGesture2-Publish</div><div class="line">├── apppicker.jpg</div><div class="line">├── logo.jpg</div><div class="line">└── rules.jpg</div><div class="line">MacGesture2-Publish.md</div><div class="line"></div><div class="line">Make sure post_asset_folder: <span class="literal">true</span> <span class="keyword">in</span> your _config.yml.</div><div class="line"></div><div class="line">Just use ![logo](logo.jpg) to insert logo.jpg.</div></pre></td></tr></table></figure>
+        <h3 id="什么是响应式编程"><a href="#什么是响应式编程" class="headerlink" title="什么是响应式编程"></a>什么是响应式编程</h3><ul>
+<li>是一种基于异步数据流概念的编程模式（可以想象河流的特点：）</li>
+<li>响应式编程–关键概念：<strong>事件</strong></li>
+</ul>
+<hr>
+<h3 id="RxJava是什么"><a href="#RxJava是什么" class="headerlink" title="RxJava是什么?"></a>RxJava是什么?</h3><ol>
+<li>异步数据处理库</li>
+<li>扩展的观察者模式</li>
+</ol>
+<h3 id="RxJava特点："><a href="#RxJava特点：" class="headerlink" title="RxJava特点："></a>RxJava特点：</h3><ul>
+<li>&lt; 1MB Jar</li>
+<li>轻量级框架</li>
+<li>支持Java 8 lambda</li>
+<li>支持Java6 + &amp;Android2.3+</li>
+<li>支持异步和同步<h3 id="扩展的观察者模式"><a href="#扩展的观察者模式" class="headerlink" title="扩展的观察者模式"></a>扩展的观察者模式</h3></li>
+<li>onCompleted()事物完成事件&lt;就是事件结束后将通知发送给观察者那里&gt;</li>
+<li>onError（）事件&lt;将错误信息通知给观察者&gt;</li>
+<li>组合而不是嵌套，避免陷入回调地狱 <h3 id="RxAndroid是什么？"><a href="#RxAndroid是什么？" class="headerlink" title="RxAndroid是什么？"></a>RxAndroid是什么？</h3><ul>
+<li>是RxJava针对Android平台的一个扩展，用于Android开发</li>
+<li>提供响应式扩展组件，快速、易于开发Android应用程序 </li>
+</ul>
+</li>
+</ul>
 
       
 
@@ -220,7 +237,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">RxJava</a>
         		</li>
       		
 		</ul>
@@ -276,7 +293,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://liuliansp.github.io/2017/08/16/hexo-asset-image/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://liuliansp.github.io/2017/10/12/RxJava学习笔记/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -290,18 +307,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/08/29/达内第一天/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/14/ubuntu-安装chmsee/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          达内第一天
+          ubuntu 安装chmsee
         
       </div>
     </a>
   
   
-    <a href="/2017/08/15/VSCode拓展插件推荐/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">VSCode拓展插件推荐</div>
+    <a href="/2017/10/02/计算机网络/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">计算机网络</div>
       <i class="icon-circle-right"></i>
     </a>
   
