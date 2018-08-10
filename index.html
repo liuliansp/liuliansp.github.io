@@ -155,117 +155,23 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-PythonOracel操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Python-操作Oracle数据库"><a href="#Python-操作Oracle数据库" class="headerlink" title="Python 操作Oracle数据库"></a>Python 操作Oracle数据库</h2><hr>
-<ul>
-<li>安装cx_Oracle python连接Oracle数据库:</li>
-</ul>
-<h3 id="简单的使用流程如下："><a href="#简单的使用流程如下：" class="headerlink" title="简单的使用流程如下："></a>简单的使用流程如下：</h3><ol>
-<li>引用模块cx_Oracle</li>
-<li>连接数据库</li>
-<li>获取cursor</li>
-<li>使用cursor进行各种操作</li>
-<li>关闭cursor</li>
-<li>关闭连接</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pipenv install cx_Oracle</span><br><span class="line"></span><br><span class="line">import cx_Oracle</span><br><span class="line">conn = cx_Oracle.connect(<span class="string">'数据库用户名/密码@host:port/数据库名'</span>)</span><br><span class="line">c=conn.cursor()</span><br><span class="line">x=c.execute(<span class="string">'select sysdate(字段) from dual(表名)'</span>) &lt;-- 执行查询语句 --&gt;</span><br><span class="line">x.fetchone()</span><br><span class="line">c.close()</span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/10/PythonOracel操作/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-zip解压乱码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="linux-解压zip文件乱码问题"><a href="#linux-解压zip文件乱码问题" class="headerlink" title="linux 解压zip文件乱码问题"></a>linux 解压zip文件乱码问题</h3><hr>
-<p>安装unzip<br>使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip -O CP936 &lt;文件名&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip -O GBK &lt;文件名&gt;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/10/zip解压乱码/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-SSL学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/10/SSL学习/">SSL学习</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/10/SSL学习/" class="archive-article-date">
+  	<time datetime="2018-08-10T05:56:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-10</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -286,6 +192,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ssl</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -320,82 +237,39 @@
 
 
   
-    <article id="post-Django 学习(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-PythonOracel操作-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Python-pipenv使用以及学习Django总结-一"><a href="#Python-pipenv使用以及学习Django总结-一" class="headerlink" title="Python pipenv使用以及学习Django总结(一)"></a>Python pipenv使用以及学习Django总结(一)</h3><hr>
-<ol>
-<li>pip install pipenv</li>
-<li>pipenv shell (进入虚拟环境)</li>
-<li>pipenv install django</li>
-<li>pipenv graph (查看pipenv的安装包目录)</li>
-<li>django-admin startproject djangoDemo(生成项目)</li>
-<li>使用Pycharm打开Django项目</li>
-<li>并且在Pycharm中打开Terminal </li>
-<li>python manage.py startapp webtest(webtest是项目名称) <strong>生成应用</strong></li>
-<li>python manage.py runserver</li>
-<li></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/10/Django 学习(一)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+      <header class="article-header">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-Django 学习(二)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/10/PythonOracel操作-1/">PythonOracel操作</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/10/PythonOracel操作-1/" class="archive-article-date">
+  	<time datetime="2018-08-10T05:56:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-10</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Django-学习-二"><a href="#Django-学习-二" class="headerlink" title="Django 学习(二)"></a>Django 学习(二)</h3><hr>
+        <h2 id="Python-操作Oracle数据库"><a href="#Python-操作Oracle数据库" class="headerlink" title="Python 操作Oracle数据库"></a>Python 操作Oracle数据库</h2><hr>
 <ul>
-<li>解决Django端口被占用问题:<br><code>sudo fuser -k 8000/tcp</code></li>
+<li>安装cx_Oracle python连接Oracle数据库:</li>
 </ul>
-<hr>
-<ol>
-<li>生成的blog应用中view.py 编写代码.</li>
-<li>在setting.py中的INSTALLED_APPS添加模块(模块指的是生成的应用名称)</li>
-<li>在urls.py中导入blog.view,就可以调用blog里面的view了</li>
+<h3 id="简单的使用流程如下："><a href="#简单的使用流程如下：" class="headerlink" title="简单的使用流程如下："></a>简单的使用流程如下：</h3><ol>
+<li>引用模块cx_Oracle</li>
+<li>连接数据库</li>
+<li>获取cursor</li>
+<li>使用cursor进行各种操作</li>
+<li>关闭cursor</li>
+<li>关闭连接</li>
 </ol>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pipenv install cx_Oracle</span><br><span class="line"></span><br><span class="line">import cx_Oracle</span><br><span class="line">conn = cx_Oracle.connect(<span class="string">'数据库用户名/密码@host:port/数据库名'</span>)</span><br><span class="line">c=conn.cursor()</span><br><span class="line">x=c.execute(<span class="string">'select sysdate(字段) from dual(表名)'</span>) &lt;-- 执行查询语句 --&gt;</span><br><span class="line">x.fetchone()</span><br><span class="line">c.close()</span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
       
 
       
@@ -403,67 +277,30 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/10/Django 学习(二)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C# post 请求发送json数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="C-post请求发送json数据包-get获取数据包"><a href="#C-post请求发送json数据包-get获取数据包" class="headerlink" title="C#post请求发送json数据包|get获取数据包"></a>C#post请求发送json数据包|get获取数据包</h2><hr>
-<ol>
-<li>将json数据存入HttpContent http容器 </li>
-<li>设置http容器的存放头类型</li>
-<li>建立请求客户端(HttpClient)</li>
-<li>发送数据包(PostAsync)</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">      public string PostXmlResponse(string url, string xmlString)</span><br><span class="line">        &#123;</span><br><span class="line">            HttpContent httpContent = new StringContent(xmlString);</span><br><span class="line">            httpContent.Headers.ContentType = new MediaTypeHeaderValue(&quot;application/json&quot;);</span><br><span class="line">            HttpClient httpClient = new HttpClient();</span><br><span class="line">            HttpResponseMessage response = httpClient.PostAsync(url, httpContent).Result;</span><br><span class="line">            if (response.IsSuccessStatusCode)</span><br><span class="line">            &#123;</span><br><span class="line">                Task&lt;string&gt; t = response.Content.ReadAsStringAsync();</span><br><span class="line">                return t.Result;</span><br><span class="line">            &#125;</span><br><span class="line">            return string.Empty;</span><br><span class="line">        &#125;</span><br><span class="line">        public static string ToJSON(object obj)</span><br><span class="line">        &#123;</span><br><span class="line">            JavaScriptSerializer serializer = new JavaScriptSerializer();</span><br><span class="line">            return serializer.Serialize(obj);</span><br><span class="line">        &#125;</span><br><span class="line">``` </span><br><span class="line">---</span><br><span class="line">### C# get获取数据包</span><br></pre></td></tr></table></figure>
-<p> public static HttpWebResponse CreateGetHttpResponse(string url)<br>        {<br>            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;<br>            request.Method = “GET”;<br>            request.ContentType = “application/x-www-form-urlencoded”;//链接类型<br>            return request.GetResponse() as HttpWebResponse;<br>        }<br>        /// <summary><br>        /// 从HttpWebResponse对象中提取响应的数据转换为字符串<br>        /// </summary><br>        /// <param name="webresponse"><br>        /// <returns></returns><br>        public string GetResponseString(HttpWebResponse webresponse)<br>        {<br>            using (Stream s = webresponse.GetResponseStream())<br>            {<br>                StreamReader reader = new StreamReader(s, Encoding.UTF8);<br>                return reader.ReadToEnd();<br>            }<br>        }<br><code>`</code></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/10/C# post 请求发送json数据/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/08/10/PythonOracel操作-1/">展开全文 >></a>
         </p>
       
 
@@ -496,6 +333,21 @@
     <article id="post-mysql数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/10/mysql数据库/">mysql数据库</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/10/mysql数据库/" class="archive-article-date">
+  	<time datetime="2018-08-10T05:55:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-10</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="使用Navicat-premium远程连接Ubuntu14-04上的Mysql数据库"><a href="#使用Navicat-premium远程连接Ubuntu14-04上的Mysql数据库" class="headerlink" title="使用Navicat premium远程连接Ubuntu14.04上的Mysql数据库"></a>使用Navicat premium远程连接Ubuntu14.04上的Mysql数据库</h3><hr>
@@ -525,6 +377,25 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Navicat premium</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -562,6 +433,21 @@
     <article id="post-Django中Models学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/10/Django中Models学习/">Django中Models学习</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/10/Django中Models学习/" class="archive-article-date">
+  	<time datetime="2018-08-10T05:55:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-10</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="Django中Models学习"><a href="#Django中Models学习" class="headerlink" title="Django中Models学习"></a>Django中Models学习</h3><hr>
@@ -592,6 +478,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -626,33 +527,204 @@
 
 
   
-    <article id="post-简历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Django-学习-二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/10/Django-学习-二/">Django 学习(二)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/10/Django-学习-二/" class="archive-article-date">
+  	<time datetime="2018-08-10T05:54:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-10</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="我的简历"><a href="#我的简历" class="headerlink" title="我的简历 "></a><center>我的简历</center> </h2><ul>
-<li>姓名: 刘麟</li>
-<li>性别:男</li>
-<li>邮箱: <a href="mailto:Liuliansp@126.com" target="_blank" rel="noopener">Liuliansp@126.com</a></li>
-<li><a href="https://liuliansp.github.io">我的博客</a></li>
+        <h3 id="Django-学习-二"><a href="#Django-学习-二" class="headerlink" title="Django 学习(二)"></a>Django 学习(二)</h3><hr>
+<ul>
+<li>解决Django端口被占用问题:<br><code>sudo fuser -k 8000/tcp</code></li>
 </ul>
 <hr>
-<h3 id="求职意向"><a href="#求职意向" class="headerlink" title="求职意向"></a>求职意向</h3><ol>
-<li>Android 开发工程师</li>
-<li>Python 后台开发</li>
-<li>C# 开发工程师</li>
-<li>java</li>
-<li>Linux 运维工程师</li>
+<ol>
+<li>生成的blog应用中view.py 编写代码.</li>
+<li>在setting.py中的INSTALLED_APPS添加模块(模块指的是生成的应用名称)</li>
+<li>在urls.py中导入blog.view,就可以调用blog里面的view了</li>
 </ol>
-<hr>
-<h3 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h3><ul>
-<li>在广西钦州市斗方云科技有限公司实习</li>
-</ul>
-<hr>
-<h3 id="教育背景"><a href="#教育背景" class="headerlink" title="教育背景"></a>教育背景</h3><hr>
-<h3 id="自我评价"><a href="#自我评价" class="headerlink" title="自我评价"></a>自我评价</h3><hr>
 
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/10/Django-学习-二/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Django-学习-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/10/Django-学习-一/">Django 学习(一)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/10/Django-学习-一/" class="archive-article-date">
+  	<time datetime="2018-08-10T05:54:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Python-pipenv使用以及学习Django总结-一"><a href="#Python-pipenv使用以及学习Django总结-一" class="headerlink" title="Python pipenv使用以及学习Django总结(一)"></a>Python pipenv使用以及学习Django总结(一)</h3><hr>
+<ol>
+<li>pip install pipenv</li>
+<li>pipenv shell (进入虚拟环境)  </li>
+<li>pipenv install django</li>
+<li>pipenv graph (查看pipenv的安装包目录)</li>
+<li>django-admin startproject djangoDemo(生成项目)</li>
+<li>使用Pycharm打开Django项目</li>
+<li>并且在Pycharm中打开Terminal </li>
+<li>python manage.py startapp webtest(webtest是项目名称) <strong>生成应用</strong></li>
+<li>python manage.py runserver</li>
+<li></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/10/Django-学习-一/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-cs文件post请求发送json数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/10/cs文件post请求发送json数据/">.cs文件post请求发送json数据</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/10/cs文件post请求发送json数据/" class="archive-article-date">
+  	<time datetime="2018-08-10T05:53:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
       
 
       
@@ -664,7 +736,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/10/简历/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/08/10/cs文件post请求发送json数据/">展开全文 >></a>
         </p>
       
 
@@ -741,6 +813,167 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/08/10/hexo-asset-image/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-PACS系統" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/12/PACS系統/">PACS系统</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/12/PACS系統/" class="archive-article-date">
+  	<time datetime="2017-12-12T00:40:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="PACS系统-简介"><a href="#PACS系统-简介" class="headerlink" title="PACS系统 简介"></a>PACS系统 简介</h2><blockquote>
+<p>PACS系统就是 Picture Archiving and Communication Systems缩写，意为影像归档和通信系统。它是应用医学影像科室的系统，主要的任务就是把日常产生的各种医学影像（MR、CT、X-ray、超声、红外、显微仪等设备产生图像）通过各种接口（模拟、DICOM、网络）以数字化的方式海量保存起来，当需要的时候在一定的权限下能很快的调回使用，同时增加一些辅助诊断管理功能。它在各种影像设备间传输数据和组织存储数据具有重要的作用。</p>
+</blockquote>
+<hr>
+<h3 id="DICOM优势："><a href="#DICOM优势：" class="headerlink" title="DICOM优势："></a>DICOM优势：</h3><h2 id="用DICOM3-0格式有许多好处，其中一条是今后要更换PACS时不必找旧PACS厂家来转换数据。更重要的是用DICOM3-0文件格式可以随时加影像模式、加减和更改图像文件的内容。而传统的固定字段长度图像格式要添些东西就要全盘改动。"><a href="#用DICOM3-0格式有许多好处，其中一条是今后要更换PACS时不必找旧PACS厂家来转换数据。更重要的是用DICOM3-0文件格式可以随时加影像模式、加减和更改图像文件的内容。而传统的固定字段长度图像格式要添些东西就要全盘改动。" class="headerlink" title="用DICOM3.0格式有许多好处，其中一条是今后要更换PACS时不必找旧PACS厂家来转换数据。更重要的是用DICOM3.0文件格式可以随时加影像模式、加减和更改图像文件的内容。而传统的固定字段长度图像格式要添些东西就要全盘改动。"></a><strong>用DICOM3.0格式有许多好处，其中一条是今后要更换PACS时不必找旧PACS厂家来转换数据。更重要的是用DICOM3.0文件格式可以随时加影像模式、加减和更改图像文件的内容。而传统的固定字段长度图像格式要添些东西就要全盘改动。</strong></h2><pre><code class="新一代的PACS大多采用DICOM支持的标准压缩算法，如JPEG、JPEGLossless、JPEG2000、JPEG-LS和Deflate等。厂家用自定义算法来压缩图像的现象越来越少。">
+</code></pre>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">PACS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/12/PACS系統/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ubuntu-安装chmsee" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/14/ubuntu-安装chmsee/">ubuntu 安装chmsee</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/14/ubuntu-安装chmsee/" class="archive-article-date">
+  	<time datetime="2017-10-14T03:54:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ubuntu-安装chmsee"><a href="#ubuntu-安装chmsee" class="headerlink" title="ubuntu 安装chmsee"></a>ubuntu 安装chmsee</h2><ul>
+<li>安装依赖包</li>
+<li>linux下面阅读CHM文件的软件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libc6 libchm1 libgcrypt11 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk2.0-0 libpango1.0-0 libwebkitgtk-1.0-0 libxml2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(64位)    sudo dpkg -i chmsee_1.3.0-2ubuntu2_amd64.deb  安装软件包,下载地址: http://kr.archive.ubuntu.com/ubuntu/pool/universe/c/chmsee/chmsee_1.3.0-2ubuntu2_amd64.deb  Ubuntu的官方软件库放心下载.</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">chm</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/14/ubuntu-安装chmsee/">展开全文 >></a>
         </p>
       
 
@@ -867,6 +1100,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">PACS</a>
               </li>
              
@@ -875,7 +1116,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sublime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -903,11 +1152,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+                <a href="javascript:void(0)" class="js-tag color1">Navicat premium</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">培训</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
