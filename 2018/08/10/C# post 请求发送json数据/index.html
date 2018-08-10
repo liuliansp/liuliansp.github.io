@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://liuliansp.github.io">
-  <title>Tag: nodejs | SP_Blog</title>
+  <title>SP_Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="技术掌握人生">
-<meta property="og:type" content="website">
+  <meta name="description" content="C#post请求发送json数据包|get获取数据包  将json数据存入HttpContent http容器  设置http容器的存放头类型 建立请求客户端(HttpClient) 发送数据包(PostAsync)  123456789101112131415161718192021      public string PostXmlResponse(string url, string xm">
+<meta property="og:type" content="article">
 <meta property="og:title" content="SP_Blog">
-<meta property="og:url" content="https://liuliansp.github.io/tags/nodejs/index.html">
+<meta property="og:url" content="https://liuliansp.github.io/2018/08/10/C# post 请求发送json数据/index.html">
 <meta property="og:site_name" content="SP_Blog">
-<meta property="og:description" content="技术掌握人生">
+<meta property="og:description" content="C#post请求发送json数据包|get获取数据包  将json数据存入HttpContent http容器  设置http容器的存放头类型 建立请求客户端(HttpClient) 发送数据包(PostAsync)  123456789101112131415161718192021      public string PostXmlResponse(string url, string xm">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-28T04:09:09.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SP_Blog">
-<meta name="twitter:description" content="技术掌握人生">
+<meta name="twitter:description" content="C#post请求发送json数据包|get获取数据包  将json数据存入HttpContent http容器  设置http容器的存放头类型 建立请求客户端(HttpClient) 发送数据包(PostAsync)  123456789101112131415161718192021      public string PostXmlResponse(string url, string xm">
   
     <link rel="alternative" href="/atom.xml" title="SP_Blog" type="application/atom+xml">
   
@@ -153,64 +154,161 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-C# post 请求发送json数据" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="C-post请求发送json数据包-get获取数据包"><a href="#C-post请求发送json数据包-get获取数据包" class="headerlink" title="C#post请求发送json数据包|get获取数据包"></a>C#post请求发送json数据包|get获取数据包</h2><hr>
+<ol>
+<li>将json数据存入HttpContent http容器 </li>
+<li>设置http容器的存放头类型</li>
+<li>建立请求客户端(HttpClient)</li>
+<li>发送数据包(PostAsync)</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">      public string PostXmlResponse(string url, string xmlString)</span><br><span class="line">        &#123;</span><br><span class="line">            HttpContent httpContent = new StringContent(xmlString);</span><br><span class="line">            httpContent.Headers.ContentType = new MediaTypeHeaderValue(&quot;application/json&quot;);</span><br><span class="line">            HttpClient httpClient = new HttpClient();</span><br><span class="line">            HttpResponseMessage response = httpClient.PostAsync(url, httpContent).Result;</span><br><span class="line">            if (response.IsSuccessStatusCode)</span><br><span class="line">            &#123;</span><br><span class="line">                Task&lt;string&gt; t = response.Content.ReadAsStringAsync();</span><br><span class="line">                return t.Result;</span><br><span class="line">            &#125;</span><br><span class="line">            return string.Empty;</span><br><span class="line">        &#125;</span><br><span class="line">        public static string ToJSON(object obj)</span><br><span class="line">        &#123;</span><br><span class="line">            JavaScriptSerializer serializer = new JavaScriptSerializer();</span><br><span class="line">            return serializer.Serialize(obj);</span><br><span class="line">        &#125;</span><br><span class="line">``` </span><br><span class="line">---</span><br><span class="line">### C# get获取数据包</span><br></pre></td></tr></table></figure>
+<p> public static HttpWebResponse CreateGetHttpResponse(string url)<br>        {<br>            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;<br>            request.Method = “GET”;<br>            request.ContentType = “application/x-www-form-urlencoded”;//链接类型<br>            return request.GetResponse() as HttpWebResponse;<br>        }<br>        /// <summary><br>        /// 从HttpWebResponse对象中提取响应的数据转换为字符串<br>        /// </summary><br>        /// <param name="webresponse"><br>        /// <returns></returns><br>        public string GetResponseString(HttpWebResponse webresponse)<br>        {<br>            using (Stream s = webresponse.GetResponseStream())<br>            {<br>                StreamReader reader = new StreamReader(s, Encoding.UTF8);<br>                return reader.ReadToEnd();<br>            }<br>        }<br><code>`</code></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃鸡<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/13/Ubuntu16-04安装最新版nodejs/" class="archive-article-date">
-  	<time datetime="2017-08-13T14:49:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/13/Ubuntu16-04安装最新版nodejs/">Ubuntu16.04安装最新版nodejs</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://liuliansp.github.io/2018/08/10/C# post 请求发送json数据/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/08/10/Django 学习(二)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/08/10/mysql数据库/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -233,9 +331,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
