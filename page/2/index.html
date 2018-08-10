@@ -155,6 +155,102 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-RxJava学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/12/RxJava学习笔记/">RxJava学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/12/RxJava学习笔记/" class="archive-article-date">
+  	<time datetime="2017-10-12T01:20:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是响应式编程"><a href="#什么是响应式编程" class="headerlink" title="什么是响应式编程"></a>什么是响应式编程</h3><ul>
+<li>是一种基于异步数据流概念的编程模式（可以想象河流的特点：）</li>
+<li>响应式编程–关键概念：<strong>事件</strong></li>
+</ul>
+<hr>
+<h3 id="RxJava是什么"><a href="#RxJava是什么" class="headerlink" title="RxJava是什么?"></a>RxJava是什么?</h3><ol>
+<li>异步数据处理库</li>
+<li>扩展的观察者模式</li>
+</ol>
+<h3 id="RxJava特点："><a href="#RxJava特点：" class="headerlink" title="RxJava特点："></a>RxJava特点：</h3><ul>
+<li>&lt; 1MB Jar</li>
+<li>轻量级框架</li>
+<li>支持Java 8 lambda</li>
+<li>支持Java6 + &amp;Android2.3+</li>
+<li>支持异步和同步<h3 id="扩展的观察者模式"><a href="#扩展的观察者模式" class="headerlink" title="扩展的观察者模式"></a>扩展的观察者模式</h3></li>
+<li>onCompleted()事物完成事件&lt;就是事件结束后将通知发送给观察者那里&gt;</li>
+<li>onError（）事件&lt;将错误信息通知给观察者&gt;</li>
+<li>组合而不是嵌套，避免陷入回调地狱 <h3 id="RxAndroid是什么？"><a href="#RxAndroid是什么？" class="headerlink" title="RxAndroid是什么？"></a>RxAndroid是什么？</h3><ul>
+<li>是RxJava针对Android平台的一个扩展，用于Android开发</li>
+<li>提供响应式扩展组件，快速、易于开发Android应用程序 </li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">RxJava</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/12/RxJava学习笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-计算机网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -909,87 +1005,6 @@
 
 
   
-    <article id="post-Ubuntu16-04安装最新版nodejs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/13/Ubuntu16-04安装最新版nodejs/">Ubuntu16.04安装最新版nodejs</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/13/Ubuntu16-04安装最新版nodejs/" class="archive-article-date">
-  	<time datetime="2017-08-13T14:49:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、安装最新版nodejs"><a href="#一、安装最新版nodejs" class="headerlink" title="一、安装最新版nodejs"></a>一、安装最新版nodejs</h2><h3 id="1-更新ubuntu软件源"><a href="#1-更新ubuntu软件源" class="headerlink" title="1.更新ubuntu软件源"></a>1.更新ubuntu软件源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install -y python-software-properties </span><br><span class="line">software-properties-common</span><br><span class="line">sudo add-apt-repository ppa:chris-lea/node.js</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
-<h3 id="2-安装nodejs"><a href="#2-安装nodejs" class="headerlink" title="2.安装nodejs"></a>2.安装nodejs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br><span class="line">sudo apt install nodejs-legacy</span><br><span class="line">sudo apt install npm</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/08/13/Ubuntu16-04安装最新版nodejs/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/13/Ubuntu16-04安装最新版nodejs/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1087,6 +1102,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Archlinux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">zip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">C#</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">json</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -1119,19 +1154,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">chm</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1144,6 +1175,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">chm</a>
               </li>
              
               <li class="article-tag-list-item">
