@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="SP_Blog">
 <meta property="og:description" content="掌握交换机基本概念 掌握交换机的基本配置 掌握以太网交换机常见的维护方式VLAN的基本概念Virtual Local Area Network(虚拟局域网) 是将位于不同的网段上的用户和服务器从从逻辑上划分成终端站组VLAN的出发点:1.限制广播包2.安全性3.减少移动和改变的代价4.虚拟工作组">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-17T15:15:37.219Z">
+<meta property="og:updated_time" content="2018-09-21T09:48:24.794Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="H3C交换机基础">
 <meta name="twitter:description" content="掌握交换机基本概念 掌握交换机的基本配置 掌握以太网交换机常见的维护方式VLAN的基本概念Virtual Local Area Network(虚拟局域网) 是将位于不同的网段上的用户和服务器从从逻辑上划分成终端站组VLAN的出发点:1.限制广播包2.安全性3.减少移动和改变的代价4.虚拟工作组">
@@ -194,6 +194,25 @@
 <h3 id="三层交换机原理"><a href="#三层交换机原理" class="headerlink" title="三层交换机原理"></a>三层交换机原理</h3><blockquote>
 <p>三层交换机使用硬件来实现数据包转发功能,转发的依据是三层硬件转发表.<br>三层硬件转发表的建立需要路由表的辅助,路由表的建立和维护需要由软件来实现.<br>三层交换也包含两个重要的过程:<br>1.地址学习:<br>主要用来生成硬件转发表,表项主要有目的IP地址,VLAN, Port和下一跳MAC,该转发表由软件生成.学习完形成表项后,转发<br>过程由硬件完成.<br>2.报文转发:<br>统一数据流,只需要分析首个数据包的IP地址进行路由查找,完成的一个数据包的转发后,三层交换机会在二层上建立快速转发映射.<br>后续报文则是因为已经学习到转发表项,完全由硬件来完成,这就是所谓的<br>“一次路由多次交换”</p>
 </blockquote>
+<hr>
+<h2 id="H3C"><a href="#H3C" class="headerlink" title="H3C"></a>H3C</h2><ul>
+<li>HL-001网络基础知识<br>OSI 七层协议<br>简记法:<br>应,表,会,传, 网,数, 物<br><a href="https://wenku.baidu.com/view/081d3a3b1611cc7931b765ce050876323112741c.html" target="_blank" rel="noopener">转自地址</a></li>
+</ul>
+<h3 id="网络层-编址和路由"><a href="#网络层-编址和路由" class="headerlink" title="网络层:编址和路由"></a>网络层:编址和路由</h3><ul>
+<li>网络地址:<br>IP地址: 网络地址10.<br>主机地址8.2.48</li>
+<li>网络层地址由两部分地址组成:网络地址和主机地址.网络地址是<br>全局唯一的.</li>
+<li>可路由协议:IP, IPX</li>
+<li>路由协议:RIP OSPF BGP等 </li>
+</ul>
+<h3 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h3><ul>
+<li>局域网数据链路层分为2个子层:<br>LLC子层和MAC子层</li>
+<li><p>MAC地址有48bit,用16进制数表示<br>厂商编号(24bit),序列号(24bits)</p>
+</li>
+<li><p>会话层协议:<br>-&gt; SQL,NFS,RPC等</p>
+</li>
+<li>表示层协议:<br>-&gt; ASCLL,MPEG,JPEG等</li>
+<li>应用层协议:<br>-&gt; 文字处理,邮件,电子表格等</li>
+</ul>
 
       
 
@@ -302,6 +321,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/09/21/arch-ufw-安装与配置/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          arch_ufw_安装与配置 
+        
+      </div>
+    </a>
   
   
     <a href="/2018/09/01/大型网站架构/" id="article-nav-older" class="article-nav-link-wrap">
@@ -429,14 +457,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Archlinux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">zip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
@@ -446,6 +466,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">json</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Archlinux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">zip</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -461,14 +489,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">PACS</a>
               </li>
              
@@ -477,11 +497,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VNC</a>
+                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">arch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">linux 运维</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -493,11 +521,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">VNC</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
