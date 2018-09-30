@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="SP_Blog">
 <meta property="og:description" content="掌握交换机基本概念 掌握交换机的基本配置 掌握以太网交换机常见的维护方式VLAN的基本概念Virtual Local Area Network(虚拟局域网) 是将位于不同的网段上的用户和服务器从从逻辑上划分成终端站组VLAN的出发点:1.限制广播包2.安全性3.减少移动和改变的代价4.虚拟工作组">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-21T09:48:24.794Z">
+<meta property="og:updated_time" content="2018-09-30T06:44:44.307Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="H3C交换机基础">
 <meta name="twitter:description" content="掌握交换机基本概念 掌握交换机的基本配置 掌握以太网交换机常见的维护方式VLAN的基本概念Virtual Local Area Network(虚拟局域网) 是将位于不同的网段上的用户和服务器从从逻辑上划分成终端站组VLAN的出发点:1.限制广播包2.安全性3.减少移动和改变的代价4.虚拟工作组">
@@ -213,6 +213,53 @@
 <li>表示层协议:<br>-&gt; ASCLL,MPEG,JPEG等</li>
 <li>应用层协议:<br>-&gt; 文字处理,邮件,电子表格等</li>
 </ul>
+<h3 id="SNMP"><a href="#SNMP" class="headerlink" title="SNMP"></a>SNMP</h3><blockquote>
+<p>SNMP :是一种简单网络管理协议,它属于TCP/IP五层协议中的应用层协议,,用于网络管理的协议.SNMP主要用于网络设备管理.<br><strong>SNMP协议主要由两部分构成:</strong>SNMP管理站和SNMP代理.</p>
+<ul>
+<li>SNMP管理站是一个中心节点,负责收集维护各个SNMP元素的信息.并对这些信息进行处理,最后反馈给管理员.</li>
+<li>SNMP代理是运行在各个被管理的网络节点之上,负责统计该节点的各项信息,并负责与SNMP<br>管理站交互.接收执行管理站命令,上传各种本地网络信息</li>
+<li>SNMP管理站和SNMP代理之间是松散耦合.他们之间的通信是通过UDP协议完成.通常SNMP管理站<br>通过UDP协议向SNMP代理发送命令,SNMP代理接收到命令之后返回SNMP管理站需要的参数.但是当snmp代理检测到网络异常的时候<br>,也可以主动向SNMP管理站发送消息,通告当前异常状况.<br>SNMP的基本思想:为不同种类的设备,不同的厂家生产的设备,不同型号的设备,定义为一个统一的接口和协议.<br>使得管理员可以是使用统一的外观面对这些需要管理的网络设备进行管理..通过网络,管理员可以管理位于不同物理空间的设备<br>,从而大大提高网络管理的效率,简化网络管理员的工作.</li>
+</ul>
+</blockquote>
+<h3 id="SNMP-的实现结构"><a href="#SNMP-的实现结构" class="headerlink" title="SNMP 的实现结构"></a>SNMP 的实现结构</h3><ul>
+<li><p>SNMP为管理员提供了一个网络管理平台(NMS),又称为[管理站],负责网管命令的发出,数据存储,及数据的分析.[被]监管的设备上运行一个SNMP代理(Agent),代理实现设备与管理站的SNMP通信.</p>
+</li>
+<li><p>管理站与代理端通过MIB进行接口统一,MIB定义了设备中被管理对象.管理站和代理都实现了相应的MIB对象,使得双方可以识别对方的数据,实现通信.管理站向代理申请MIB中定义的数据,代理识别后,将管理设备提供的相关状态和参数等数据转换为MIB定义的格式,应答给管理站,完成一次管理操作. </p>
+</li>
+<li><p>SNMP有关的基本概念</p>
+<blockquote>
+<p>代理和管理站的模型<br>SNMP分两种角色:SNMP管理站(manager , 本机127.0.0.1)和SNMP代理(agent, 我们要操作的机器,比如192.168.1.144).<br>管理站指的是运行了可以执行网络管理任务软件的服务器,通常被称作<strong>网络管理工作站</strong>(NMS),NMS负责采样网络中的agent的信息,并接受agent的trap. 代理是实际网络设备中用来实现SNMP功能的不封.代理在UDP的161端口接收NMS的读写请求消息,管理站在UDP的162端口接收代理的事件通告消息.所以,一旦获取设备的访问权限(community,默认为public), 就可以访问设备信息,改写的配置设备参数,由于采用UDP协议,<strong>不需要在代理和管理站之间保持连接</strong></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="SNMP的操作命令"><a href="#SNMP的操作命令" class="headerlink" title="SNMP的操作命令"></a>SNMP的操作命令</h3><blockquote>
+<p>SNMP协议之所以易于使用,这是因为它对外提供了三种用于控制MIB对象的基本操作命令,它们是:Get, Set,Trap.</p>
+<ol>
+<li>Get : 管理站读取代理者处对象的值.它是SNMP协议中使用率最高的一个命令,因为该命令是从网络设备<br>获取管理信息的基本方式.</li>
+<li>Set : 管理站设置代理者对象值.它是一个特权命令,因为可以通过它来改动设备的配置或控制设备的运转状态.它可以<br>设置设备的名称,关掉一个端口或清除一个地址解析表中的项.</li>
+<li>Trap : 代理者主动向管理站通报重要的事件.它的功能就是在网络管理系统没有明确要求的前提下,由管理代理通知网络管理系统有一些特别的情况或问题发生了.如果发生意外,客户会向服务器的162端口发送一个消息,告知服务器制定的变量发生了变化,通常由服务器请求而获得的数据由服务器的161端口接收,<strong><em>Trap消息可以用来通知管理站线路的故障,连接终端和恢复,认证失败等消息.管理站可相应的作出处理.</em></strong></li>
+</ol>
+</blockquote>
+<h3 id="SNMP的消息构成"><a href="#SNMP的消息构成" class="headerlink" title="SNMP的消息构成"></a>SNMP的消息构成</h3><blockquote>
+<p>SNMP协议定义了数据包的格式,及网络管理员和管理代理之间的信息交换,它还控制着管理代理的MIB数据对象.因此,可用于处理管理代理定义的各种任务.一个SNMP信息由”版本号”,”SNMP共同体名”和”协议数据单元(PDU)”构成,<br>版本标识符|团体名|PDU</p>
+<ul>
+<li>版本标识符: 用于书名现在使用的是哪个版本的SNMP协议,确保SNMP代理使用相同的协议,每个SNMP代理都直接抛弃与自己协议版本不同的数据报.</li>
+<li>团体名: 团体是基本的安全机制,用于实现SNMP网络管理员访问SNMP管理代理时的身份验证.类似于密码,默认值为public. 团体名是管理代理的口令,管理员被允许访问数据对象的前提就是网络管理员知道网络代理的口令.如果把配置管理代理成为执行Trap命令,当网络管理员用一个错误的分区名查询管理代理时,系统就发送一个autenticationFailure trap 报文.</li>
+<li>协议数据单元(PDU):PDU (协议数据单元)是SNMP消息中的数据区,即SNMP通信时报文数据的载体.PDU指明了SNMP的信息类型及相关数据.</li>
+</ul>
+</blockquote>
+<h3 id="PDU-协议数据单元"><a href="#PDU-协议数据单元" class="headerlink" title="PDU (协议数据单元)"></a>PDU (协议数据单元)</h3><blockquote>
+<p>PDU(协议数据单元)是SNMP消息中的数据区,即SNMP通信时报文数据的载体.</p>
+</blockquote>
+<h3 id="MIB-管理信息库"><a href="#MIB-管理信息库" class="headerlink" title="MIB(管理信息库)"></a>MIB(管理信息库)</h3><blockquote>
+<p>管理信息(MIB)库可以理解成为agent维护的管理对象数据库，MIB中定义的大部分管理对象的状态和统计信息都可以被NMS访问。MIB是一个按照层次结构组织的树状结构，每个被管对象对应树形结构的一个叶子节点，称为一个object，拥有唯一的数字标识符.</p>
+</blockquote>
+<h3 id="OID-Object-Identifier"><a href="#OID-Object-Identifier" class="headerlink" title="OID(Object Identifier)"></a>OID(Object Identifier)</h3><blockquote>
+<p>每个管理对象都有自己的OID(Object Identifier)，管理对象通过树状结构进行组织，OID由树上的一系列整数组成，整数之间用点( . )分隔开，树的叶子节点才是真正能够被管理的对象。<br><a href="https://www.cnblogs.com/xdp-gacl/p/3978825.html" target="_blank" rel="noopener">地址</a></p>
+</blockquote>
+<h3 id="NAT配置"><a href="#NAT配置" class="headerlink" title="NAT配置"></a>NAT配置</h3><blockquote>
+<p>NAT（Network Address Translation）又称为网络地址转换，用于实现私有网络和公有网络之间的互访。<br>A类私有地址：10.0.0.0～10.255.255.255<br>B类私有地址：172.16.0.0～172.31.255.255<br>C类私有地址：192.168.0.0～192.168.255.255</p>
+</blockquote>
 
       
 
@@ -457,6 +504,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Archlinux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">zip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
@@ -466,14 +521,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">json</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Archlinux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">zip</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,27 +536,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">PACS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">PACS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sublime</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">arch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">linux 运维</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,6 +556,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
@@ -529,7 +572,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color5">arch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">linux 运维</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,7 +584,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">chm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,19 +600,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">linux运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">chm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,6 +609,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">linux运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
             
             <div class="clearfix"></div>
