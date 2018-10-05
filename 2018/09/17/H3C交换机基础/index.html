@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="SP_Blog">
 <meta property="og:description" content="掌握交换机基本概念 掌握交换机的基本配置 掌握以太网交换机常见的维护方式VLAN的基本概念Virtual Local Area Network(虚拟局域网) 是将位于不同的网段上的用户和服务器从从逻辑上划分成终端站组VLAN的出发点:1.限制广播包2.安全性3.减少移动和改变的代价4.虚拟工作组">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-30T06:44:44.307Z">
+<meta property="og:updated_time" content="2018-10-05T12:39:32.154Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="H3C交换机基础">
 <meta name="twitter:description" content="掌握交换机基本概念 掌握交换机的基本配置 掌握以太网交换机常见的维护方式VLAN的基本概念Virtual Local Area Network(虚拟局域网) 是将位于不同的网段上的用户和服务器从从逻辑上划分成终端站组VLAN的出发点:1.限制广播包2.安全性3.减少移动和改变的代价4.虚拟工作组">
@@ -196,7 +196,7 @@
 </blockquote>
 <hr>
 <h2 id="H3C"><a href="#H3C" class="headerlink" title="H3C"></a>H3C</h2><ul>
-<li>HL-001网络基础知识<br>OSI 七层协议<br>简记法:<br>应,表,会,传, 网,数, 物<br><a href="https://wenku.baidu.com/view/081d3a3b1611cc7931b765ce050876323112741c.html" target="_blank" rel="noopener">转自地址</a></li>
+<li>HL-001网络基础知识<br>OSI 七层协议<br>简记法:<br>应,表,会,传, 网,数, 物<br><a href="https://wenku.baidu.com/view/081d3a3b1611cc7931b765ce050876323112741c.html" target="_blank" rel="noopener">转自地址</a><br><a href="https://blog.csdn.net/qq_36357820/article/details/78918630" target="_blank" rel="noopener">三种协议</a><br>URL 统一资源定位符</li>
 </ul>
 <h3 id="网络层-编址和路由"><a href="#网络层-编址和路由" class="headerlink" title="网络层:编址和路由"></a>网络层:编址和路由</h3><ul>
 <li>网络地址:<br>IP地址: 网络地址10.<br>主机地址8.2.48</li>
@@ -257,8 +257,50 @@
 <h3 id="OID-Object-Identifier"><a href="#OID-Object-Identifier" class="headerlink" title="OID(Object Identifier)"></a>OID(Object Identifier)</h3><blockquote>
 <p>每个管理对象都有自己的OID(Object Identifier)，管理对象通过树状结构进行组织，OID由树上的一系列整数组成，整数之间用点( . )分隔开，树的叶子节点才是真正能够被管理的对象。<br><a href="https://www.cnblogs.com/xdp-gacl/p/3978825.html" target="_blank" rel="noopener">地址</a></p>
 </blockquote>
-<h3 id="NAT配置"><a href="#NAT配置" class="headerlink" title="NAT配置"></a>NAT配置</h3><blockquote>
+<h2 id="NAT配置"><a href="#NAT配置" class="headerlink" title="NAT配置"></a>NAT配置</h2><ul>
+<li><a href="https://blog.csdn.net/qq_36357820/article/details/78918630" target="_blank" rel="noopener">地址</a><blockquote>
 <p>NAT（Network Address Translation）又称为网络地址转换，用于实现私有网络和公有网络之间的互访。<br>A类私有地址：10.0.0.0～10.255.255.255<br>B类私有地址：172.16.0.0～172.31.255.255<br>C类私有地址：192.168.0.0～192.168.255.255</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="路由器支持NAT类型"><a href="#路由器支持NAT类型" class="headerlink" title="路由器支持NAT类型"></a>路由器支持NAT类型</h3><p>静态NAT,PAT,内部服务器,NATALG功能,NAT过滤,NAT映射,Easy IP,两次NAT及NAT多实例.</p>
+<h3 id="静态NAT"><a href="#静态NAT" class="headerlink" title="静态NAT"></a>静态NAT</h3><blockquote>
+<p>静态NAT实现私有网址和公有网址的一对一转换.有多少私有地址就需要配置多少个公网地址.静态NAT不能节约公网地址,但可以起到隐藏内部网络的作用.<br>内部网络向外部网络发送报文时,静态NAT将报文的源IP地址替换为对应额公网地址;外部网络向内部网络发送</p>
+</blockquote>
+<h2 id="响应报文时-静态NAT将报文的目的地址转换为相应的私网地址"><a href="#响应报文时-静态NAT将报文的目的地址转换为相应的私网地址" class="headerlink" title="响应报文时,静态NAT将报文的目的地址转换为相应的私网地址."></a>响应报文时,静态NAT将报文的目的地址转换为相应的私网地址.</h2><h3 id="PAT"><a href="#PAT" class="headerlink" title="PAT"></a>PAT</h3><blockquote>
+<p>PAT 又称NAPT(Network Adress Port Translation),它实现一个公网地址和多个私网地址之间的映射,因此可以节约公网地址.<strong><em>PAT的基本原理是将不同的私网地址的报文的源IP地址转换为同一个公网地址,但他们转换为该地址的不同端口号,因此仍然能够共享同一地址.</em></strong><br>PAT 需要维护一张私网地址和端口映射表.当不同的私网地址向外发送报文是,PAT 将报文的源IP地址跟换为相同的公网地址,但源端口被替换为不同的端口号;当外部网络向内部网络发送响应报文时,PAT根据报文的目的端口号,将报文的目的IP地址替换为不同的私网地址.</p>
+</blockquote>
+<p>###NAT过滤</p>
+<blockquote>
+<p>NAT过滤是指NAT设备对外网发到内网的流量进行过滤,即当私网主主机向某公网主机发起访问后,公网主机发向私网主机的流量经过NAT设备时会进行过滤.</p>
+</blockquote>
+<h3 id="Easy-IP"><a href="#Easy-IP" class="headerlink" title="Easy IP"></a>Easy IP</h3><blockquote>
+<p>当进行地址转换时,直接使用借口的公有IP地址作为转换后的源地址.同样它也使用访问控制列表控制那些内部地址可以进行地址转换.</p>
+</blockquote>
+<h3 id="地址转换应用层网关"><a href="#地址转换应用层网关" class="headerlink" title="地址转换应用层网关"></a>地址转换应用层网关</h3><blockquote>
+<p>地址转换会导致许多NAT敏感的应用协议无法正常工作,必须针对该协议进行特殊的处理.所谓对NAT敏感的协议是指该协议的某些报文的有效载荷中携带IP地址和(或)端口号,如果不进行特殊处理,将会影响后继的协议交互..<br>地址转换应用层网关 NAT ALG(NAT Application Level Gateway) 是解决特殊协议穿越NAT的一种常用方式,该方法按照地址转换规则,对载荷中的IP地址和端口号进行替换,从而实现对该协议的透明中继. NAT ALG支持DNS,FTP协议,RTSP(实时流协议)和SIP.</p>
+</blockquote>
+<h3 id="两次NAT"><a href="#两次NAT" class="headerlink" title="两次NAT"></a>两次NAT</h3><blockquote>
+<p>常规地址转换技术只转换报文的源地址或目的地址,而两次NAT技术可以将报文的源地址和目的地址同时转换,该技术应用于内部网络主机地址与公网主机地址重叠的情况.<br>两次NAT技术通过在NAT设备上配置重叠地址池到临时地址的映射关系(在实现常规NAT的基础上), 将重叠地址转换为唯一的临时地址,来保证报文的正确转发.<br>在NAT设备上配置两次NAT：<br>第一步：配置常规NAT（多对多地址转换）。配置NAT地址池200.0.0.1～200.0.0.100，并应用到广域网接口。<br>第二步：配置一组重叠地址到临时地址的映射。10.0.0.0&lt;－－&gt;3.0.0.0。<br>此映射表示，重叠地址池与临时地址池一一对应，转换规则为：<br>临时地址 = 临时地址池首地址 +（重叠地址 – 重叠地址池首地址）<br>重叠地址 = 重叠地址池首地址 +（临时地址 – 临时地址池首地址）<br>当内部主机PC2直接用域名访问公网上的主机PC3时，报文的处理流程如下：<br>PC2发送解析域名为<a href="http://www.web.com的Web服务器的DNS请求，经公网DNS服务器解析后，NAT设备收到DNS服务器的响应报文。NAT设备检查DNS响应报文载荷中的解析回来的地址10.0.0.1，经检查该地址为重叠地址（与重叠地址池匹配），将地址10.0.0.1转换为对应的临时地址3.0.0.1。之后再对DNS响应报文进行目的地址转换（常规NAT处理），发送给PC2。" target="_blank" rel="noopener">www.web.com的Web服务器的DNS请求，经公网DNS服务器解析后，NAT设备收到DNS服务器的响应报文。NAT设备检查DNS响应报文载荷中的解析回来的地址10.0.0.1，经检查该地址为重叠地址（与重叠地址池匹配），将地址10.0.0.1转换为对应的临时地址3.0.0.1。之后再对DNS响应报文进行目的地址转换（常规NAT处理），发送给PC2。</a><br>PC2用<a href="http://www.web.com对应的临时地址3.0.0.1发起访问，当报文到达NAT设备时，先转换报文的源地址（常规NAT处理），再将报文的目的地址即临时地址，转换为对应的重叠地址10.0.0.1。将报文送到广域网出接口，并经广域网逐跳转发至主机PC3。" target="_blank" rel="noopener">www.web.com对应的临时地址3.0.0.1发起访问，当报文到达NAT设备时，先转换报文的源地址（常规NAT处理），再将报文的目的地址即临时地址，转换为对应的重叠地址10.0.0.1。将报文送到广域网出接口，并经广域网逐跳转发至主机PC3。</a> </p>
+</blockquote>
+<h2 id="当PC3给PC2返回的报文到NAT设备时，先检查报文的源地址10-0-0-1，该地址为重叠地址（与重叠地址池匹配），则将源地址转换为对应的临时地址3-0-0-1。之后再对返回报文的目的地址进行常规NAT转换，并发送给PC2。"><a href="#当PC3给PC2返回的报文到NAT设备时，先检查报文的源地址10-0-0-1，该地址为重叠地址（与重叠地址池匹配），则将源地址转换为对应的临时地址3-0-0-1。之后再对返回报文的目的地址进行常规NAT转换，并发送给PC2。" class="headerlink" title="当PC3给PC2返回的报文到NAT设备时，先检查报文的源地址10.0.0.1，该地址为重叠地址（与重叠地址池匹配），则将源地址转换为对应的临时地址3.0.0.1。之后再对返回报文的目的地址进行常规NAT转换，并发送给PC2。"></a>当PC3给PC2返回的报文到NAT设备时，先检查报文的源地址10.0.0.1，该地址为重叠地址（与重叠地址池匹配），则将源地址转换为对应的临时地址3.0.0.1。之后再对返回报文的目的地址进行常规NAT转换，并发送给PC2。</h2><h3 id="VPN关联的源NAT"><a href="#VPN关联的源NAT" class="headerlink" title="VPN关联的源NAT"></a>VPN关联的源NAT</h3><blockquote>
+<p>华为路由器的NAT不仅可以是内部网络的用户访问外部网络,还允许分属于不同不同VPN的用户通过同一个出口访问外部网络,<br>能够解决内部网络中IP地址重叠的VPN同时访问外部主机的问题.</p>
+</blockquote>
+<h3 id="VPN关联的NAT-Server"><a href="#VPN关联的NAT-Server" class="headerlink" title="VPN关联的NAT Server"></a>VPN关联的NAT Server</h3><p>华为路由器的NAT支持VPN关联NAT Server,提供外部网络访问NAT内主机的机会,能够支持内网多个VPN地址重叠的场景.</p>
+<h2 id="VRRP协议"><a href="#VRRP协议" class="headerlink" title="VRRP协议"></a>VRRP协议</h2><ul>
+<li><a href="http://blog.51cto.com/billy98/2064252" target="_blank" rel="noopener">学习转自地址</a><blockquote>
+<p>VRRP协议是一种容错协议,它通过吧几台路由设备联合组成一台虚拟的路由设备,并通过一定的机制来保证当主机的下一跳<br>设备设备出现故障时,可以即使将业务切换到其他设备,从而保持通讯的连续性和可靠性.<br>VRRP将局域网内的一组路由器划分在一起,组成一个备份组.备份组由一个Master路由和多个Backup路由组成,功能上相当与一台虚拟路由器.局域网内注册主机,只需要知道这个虚拟路由IP地址,并不需要知道某台设备的IP地址,将网络内主机的缺省网关设置为该虚拟路由器的IP地址,主机就可以利用该虚拟网关与外部网络进行通信.<br>VRRP将该虚拟路由器动态关联到承担传输的物理路由器上,当该物理路由器出现故障时,在此选择新的路由器去接替业务传输工作,整个过程对用户完全通明,实现了内部网络对外部网络的不断通信.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><blockquote>
+<p>反向代理(Reverse Proxy)方式是指以代理服务器来接收Internet上的连接请求,然后将请求转发给网络上的服务器,并将<br>从服务器上得到的结果返回给Internet上请求的客户端,此时代理服务器对外表现为一个服务器.</p>
+<ul>
+<li>反向代理服务器的原理:<br>1.作为内容服务器的替身</li>
+</ul>
+<ol start="2">
+<li>作为内容服务器的负载均衡器</li>
+</ol>
 </blockquote>
 
       
@@ -524,6 +566,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">交换机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -532,19 +578,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">交换机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">PACS</a>
+                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
+                <a href="javascript:void(0)" class="js-tag color5">PACS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -560,6 +602,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">arch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">linux 运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
@@ -569,14 +619,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">VNC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">arch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">linux 运维</a>
               </li>
              
               <li class="article-tag-list-item">
