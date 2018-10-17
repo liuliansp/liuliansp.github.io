@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="SP_Blog">
 <meta property="og:description" content="掌握交换机基本概念 掌握交换机的基本配置 掌握以太网交换机常见的维护方式VLAN的基本概念Virtual Local Area Network(虚拟局域网) 是将位于不同的网段上的用户和服务器从从逻辑上划分成终端站组VLAN的出发点:1.限制广播包2.安全性3.减少移动和改变的代价4.虚拟工作组">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-05T12:39:32.154Z">
+<meta property="og:updated_time" content="2018-10-05T14:14:11.248Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="H3C交换机基础">
 <meta name="twitter:description" content="掌握交换机基本概念 掌握交换机的基本配置 掌握以太网交换机常见的维护方式VLAN的基本概念Virtual Local Area Network(虚拟局域网) 是将位于不同的网段上的用户和服务器从从逻辑上划分成终端站组VLAN的出发点:1.限制广播包2.安全性3.减少移动和改变的代价4.虚拟工作组">
@@ -270,8 +270,7 @@
 <h2 id="响应报文时-静态NAT将报文的目的地址转换为相应的私网地址"><a href="#响应报文时-静态NAT将报文的目的地址转换为相应的私网地址" class="headerlink" title="响应报文时,静态NAT将报文的目的地址转换为相应的私网地址."></a>响应报文时,静态NAT将报文的目的地址转换为相应的私网地址.</h2><h3 id="PAT"><a href="#PAT" class="headerlink" title="PAT"></a>PAT</h3><blockquote>
 <p>PAT 又称NAPT(Network Adress Port Translation),它实现一个公网地址和多个私网地址之间的映射,因此可以节约公网地址.<strong><em>PAT的基本原理是将不同的私网地址的报文的源IP地址转换为同一个公网地址,但他们转换为该地址的不同端口号,因此仍然能够共享同一地址.</em></strong><br>PAT 需要维护一张私网地址和端口映射表.当不同的私网地址向外发送报文是,PAT 将报文的源IP地址跟换为相同的公网地址,但源端口被替换为不同的端口号;当外部网络向内部网络发送响应报文时,PAT根据报文的目的端口号,将报文的目的IP地址替换为不同的私网地址.</p>
 </blockquote>
-<p>###NAT过滤</p>
-<blockquote>
+<h3 id="NAT过滤"><a href="#NAT过滤" class="headerlink" title="NAT过滤"></a>NAT过滤</h3><blockquote>
 <p>NAT过滤是指NAT设备对外网发到内网的流量进行过滤,即当私网主主机向某公网主机发起访问后,公网主机发向私网主机的流量经过NAT设备时会进行过滤.</p>
 </blockquote>
 <h3 id="Easy-IP"><a href="#Easy-IP" class="headerlink" title="Easy IP"></a>Easy IP</h3><blockquote>
@@ -566,10 +565,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">交换机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -578,15 +573,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">PACS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">交换机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">PACS</a>
+                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,7 +601,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">VNC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -610,23 +621,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VNC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">chm</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,15 +641,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">培训</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color4">chm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -663,6 +654,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">培训</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
             
             <div class="clearfix"></div>
