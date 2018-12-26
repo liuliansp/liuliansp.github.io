@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://liuliansp.github.io">
-  <title>Docker 学习笔记 | SP_Blog</title>
+  <title>Docker 学习笔记(一) | SP_Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="linux  dockerdocker学习（一） 安装docker查看是否支持安装：uname -r输出为3.10或更高版本内核则可安装centos：yum -y install docker">
+  <meta name="description" content="安装docker查看是否支持安装：uname -r输出为3.10或更高版本内核则可安装centos：yum -y install docker">
+<meta name="keywords" content="linux,docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker 学习笔记">
+<meta property="og:title" content="Docker 学习笔记(一)">
 <meta property="og:url" content="https://liuliansp.github.io/2018/12/25/Docker-学习笔记/index.html">
 <meta property="og:site_name" content="SP_Blog">
-<meta property="og:description" content="linux  dockerdocker学习（一） 安装docker查看是否支持安装：uname -r输出为3.10或更高版本内核则可安装centos：yum -y install docker">
+<meta property="og:description" content="安装docker查看是否支持安装：uname -r输出为3.10或更高版本内核则可安装centos：yum -y install docker">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-25T00:35:27.630Z">
+<meta property="og:updated_time" content="2018-12-26T03:44:56.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker 学习笔记">
-<meta name="twitter:description" content="linux  dockerdocker学习（一） 安装docker查看是否支持安装：uname -r输出为3.10或更高版本内核则可安装centos：yum -y install docker">
+<meta name="twitter:title" content="Docker 学习笔记(一)">
+<meta name="twitter:description" content="安装docker查看是否支持安装：uname -r输出为3.10或更高版本内核则可安装centos：yum -y install docker">
   
     <link rel="alternative" href="/atom.xml" title="SP_Blog" type="application/atom+xml">
   
@@ -161,7 +162,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Docker 学习笔记
+      Docker 学习笔记(一)
     </h1>
   
 
@@ -175,8 +176,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li>linux </li>
-<li>docker<h2 id="docker学习（一）"><a href="#docker学习（一）" class="headerlink" title="docker学习（一）"></a>docker学习（一）</h2></li>
 <li>安装docker<br>查看是否支持安装：<br>uname -r<br>输出为3.10或更高版本内核则可安装<br>centos：yum -y install docker<a id="more"></a></li>
 <li>docker 基础命令</li>
 </ul>
@@ -215,10 +214,11 @@
 </ul>
 </li>
 <li>docker 安装tomcat <blockquote>
-<p>docker search tomcat<br>docker pull tomcat<br>docker run –name tomcat -p 8080:8080 -v $PWD/test:/usr/local/tomcat/webapps/test -d tomcat<br>命令说明：<br>-p 8080:8080：将容器的8080端口映射到主机的8080端口<br>-v $PWD/test:/usr/local/tomcat/webapps/test：将主机中当前目录下的test挂载到容器的/test<br>查看容器启动情况<br>docker ps 查看是否运行<br>3.进入容器内部： 交互式的进入容器（tomcat），”docker exec” 命令表示在运行中的容器中开启一个新进程<br>￼<br>查看到webapps路径为：/usr/local/tomcat/webapps。等下需要把war包拷贝到该路径下。<br>上传war包到容器<br>在宿主机中使用：<br>···<br>docker cp war_name tomcat:/usr/local/tomcat/webapps (tomcat是容器的名字)<br>···</p>
+<p>docker search tomcat<br>docker pull tomcat<br>docker run –name tomcat -p 8080:8080 -v $PWD/test:/usr/local/tomcat/webapps/test -d tomcat<br>命令说明：<br>-p 8080:8080：将容器的8080端口映射到主机的8080端口<br>-v $PWD/test:/usr/local/tomcat/webapps/test：将主机中当前目录下的test挂载到容器的/test<br>查看容器启动情况<br>docker ps 查看是否运行<br>3.进入容器内部： 交互式的进入容器（tomcat），”docker exec” 命令表示在运行中的容器中开启一个新进程<br>￼docker exec ubuntu:15.10 /bin/bash<br>查看到webapps路径为：/usr/local/tomcat/webapps。等下需要把war包拷贝到该路径下。<br>上传war包到容器<br>在宿主机中使用：</p>
 </blockquote>
 </li>
 </ol>
+<p>docker cp war_name tomcat:/usr/local/tomcat/webapps (tomcat是容器的名字)</p>
 
       
 
@@ -253,6 +253,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -471,6 +486,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">交换机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
@@ -483,7 +502,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">交换机</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -491,11 +510,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,10 +534,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">arch</a>
               </li>
              
@@ -527,11 +542,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,11 +558,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">chm</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">培训</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -563,15 +590,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">培训</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>
