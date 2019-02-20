@@ -176,21 +176,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="zabbix-安装"><a href="#zabbix-安装" class="headerlink" title="zabbix 安装"></a>zabbix 安装</h3><p>一、 关闭防火墙和 关闭selinux防火墙<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl stop firewalld.service </span><br><span class="line">sudo setenforce 0</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure></p>
-<p>二、安装Zabbix rpm包仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -vhi http://repo.zabbix.com/zabbix/3.0/rhel/7/x86_64/zabbix-release-3.0-1.el7.noarch.rpm</span><br></pre></td></tr></table></figure></p>
-<p>三、安装zabbix-server-mysql和zabbix-web-mysql<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y zabbix-server-mysql zabbix-web-mysql zabbix-agent</span><br></pre></td></tr></table></figure></p>
-<p>四、安装并且启动mysql5.6及初始化数据库信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo  rpm -ivh http://repo.mysql.com/yum/mysql-5.6-community/el/6/x86_64/mysql-community-release-el6-5.noarch.rpm </span><br><span class="line">sudo yum install -y mysql-community-server </span><br><span class="line">sudo systemctl start mysqld</span><br><span class="line">sudo  /sbin/chkconfig mysqld on 或者 sudo systemctl enable mysqld</span><br><span class="line">sudo mysql_secure_installation #初始化数据库信息</span><br></pre></td></tr></table></figure></p>
-<p>或者安装Mariadb<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo  yum -y install mariadb mariadb-devel mariadb-server  # centos7下安装的是mariadb</span><br><span class="line">sudo  systemctl enable mariadb</span><br><span class="line">sudo systemctl start mariadb</span><br></pre></td></tr></table></figure></p>
-<p>五、创建zabbix数据库，创建zabbix账号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br><span class="line">...</span><br><span class="line">mysql&gt;  create database zabbix character set utf8 collate utf8_bin;</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; grant all privileges on zabbix.* to &apos;zabbix&apos;@&apos;localhost&apos; identified by &apos;zabbix&apos;;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; flush privileges;</span><br><span class="line">Query OK, 0 rows affected (0.01 sec)</span><br></pre></td></tr></table></figure></p>
-<p>六、导入默认的zabbix数据库信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd  /usr/share/doc/zabbix-server-mysql-3.0.12/</span><br><span class="line">zcat create.sql.gz | mysql zabbix -uzabbix -pzabbix</span><br></pre></td></tr></table></figure></p>
-<p>七、修改zabbix_server.conf的配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/zabbix/zabbix_server.conf</span><br><span class="line">DBHost=localhost</span><br><span class="line">DBName=zabbix</span><br><span class="line">DBUser=zabbix</span><br><span class="line">DBPassword=zabbix</span><br></pre></td></tr></table></figure></p>
-<p><strong>数据库连不上报[Z3005]错误</strong><br>解决方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl stop zabbix-server</span><br><span class="line">sudo zcat /usr/share/doc/zabbix-server-mysql-*/create.sql.gz | mysql -uzabbix -pDBPassword zabbix</span><br><span class="line">systemctl start zabbix-server</span><br><span class="line">sudo cat /var/log/zabbix/zabbix_server.log</span><br></pre></td></tr></table></figure></p>
-<p>八、修改配置文件/etc/httpd/conf.d/zabbix.conf，时区改成 Asia/Shanghai</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/httpd/conf.d/zabbix.conf</span><br><span class="line">php_value max_execution_time 300 </span><br><span class="line">php_value memory_limit 128M </span><br><span class="line">php_value post_max_size 16M </span><br><span class="line">php_value upload_max_filesize 2M </span><br><span class="line">php_value max_input_time 300 </span><br><span class="line">php_value always_populate_raw_post_data -1 </span><br><span class="line">php_value date.timezone Asia/Shanghai</span><br></pre></td></tr></table></figure>
-<p>九、启动apache/zabbix-server服务并设置为开机启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start httpd</span><br><span class="line">sudo systemctl enable httpd</span><br><span class="line">sudo netstat -an |grep 80</span><br><span class="line">sudo systemctl start zabbix-server</span><br><span class="line">sudo systemctl enable zabbix-server</span><br></pre></td></tr></table></figure>
-<p>查看日志<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tailf  /var/log/zabbix/zabbix_server.log</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://www.cnblogs.com/xiewenming/p/7732144.html" target="_blank" rel="noopener">相关链接1</a><br><a href="http://blog.51cto.com/andyxu/2120362" target="_blank" rel="noopener">相关链接2</a><br><a href="https://www.zabbix.com/forum/zabbix-troubleshooting-and-problems/357061-zabbix-new-install-unable-to-select-configuration" target="_blank" rel="noopener">相关链接3</a></p>
-
+        
+          <a class="article-more-a" href="/2019/01/26/zabbix学习与搭建/#more">more >></a>
+        
       
 
       
@@ -267,7 +255,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="在hexo目录下的source文件中加入一个文件-名为CNAME-里面写你的域名-然后提交-以后就不会出现这个问题了"><a href="#在hexo目录下的source文件中加入一个文件-名为CNAME-里面写你的域名-然后提交-以后就不会出现这个问题了" class="headerlink" title="在hexo目录下的source文件中加入一个文件 名为CNAME, 里面写你的域名 然后提交, 以后就不会出现这个问题了"></a>在hexo目录下的source文件中加入一个文件 名为CNAME, 里面写你的域名 然后提交, 以后就不会出现这个问题了</h3><blockquote>
+        <ul>
+<li>在hexo目录下的source文件中加入一个文件 名为CNAME, 里面写你的域名 然后提交, 以后就不会出现这个问题了</li>
+</ul>
+<blockquote>
 <p>arch 查看软件列表命令：pacman  -Qnt<br> 删除无用软件命令：pacman -Qdt</p>
 </blockquote>
 
@@ -1072,11 +1063,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color5">Archlinux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+                <a href="javascript:void(0)" class="js-tag color4">zip</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1092,15 +1083,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Archlinux</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">zip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">交换机</a>
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1112,11 +1099,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
+                <a href="javascript:void(0)" class="js-tag color4">交换机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1124,11 +1107,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1148,6 +1131,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
@@ -1160,11 +1151,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1192,15 +1183,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">linux运维</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">

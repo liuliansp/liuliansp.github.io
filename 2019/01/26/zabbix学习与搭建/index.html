@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://liuliansp.github.io">
   <title>zabbix学习与搭建 | SP_Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="zabbix 安装一、 关闭防火墙和 关闭selinux防火墙123sudo systemctl stop firewalld.service sudo setenforce 0reboot 二、安装Zabbix rpm包仓库1sudo rpm -vhi http://repo.zabbix.com/zabbix/3.0/rhel/7/x86_64/zabbix-release-3.0-1.el7">
+  <meta name="description" content="zabbix 安装一、 关闭防火墙和 关闭selinux防火墙123sudo systemctl stop firewalld.service sudo setenforce 0reboot">
 <meta name="keywords" content="linux,zabbix">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zabbix学习与搭建">
 <meta property="og:url" content="https://liuliansp.github.io/2019/01/26/zabbix学习与搭建/index.html">
 <meta property="og:site_name" content="SP_Blog">
-<meta property="og:description" content="zabbix 安装一、 关闭防火墙和 关闭selinux防火墙123sudo systemctl stop firewalld.service sudo setenforce 0reboot 二、安装Zabbix rpm包仓库1sudo rpm -vhi http://repo.zabbix.com/zabbix/3.0/rhel/7/x86_64/zabbix-release-3.0-1.el7">
+<meta property="og:description" content="zabbix 安装一、 关闭防火墙和 关闭selinux防火墙123sudo systemctl stop firewalld.service sudo setenforce 0reboot">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-27T07:55:25.168Z">
+<meta property="og:updated_time" content="2019-02-20T06:48:14.188Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zabbix学习与搭建">
-<meta name="twitter:description" content="zabbix 安装一、 关闭防火墙和 关闭selinux防火墙123sudo systemctl stop firewalld.service sudo setenforce 0reboot 二、安装Zabbix rpm包仓库1sudo rpm -vhi http://repo.zabbix.com/zabbix/3.0/rhel/7/x86_64/zabbix-release-3.0-1.el7">
+<meta name="twitter:description" content="zabbix 安装一、 关闭防火墙和 关闭selinux防火墙123sudo systemctl stop firewalld.service sudo setenforce 0reboot">
   
     <link rel="alternative" href="/atom.xml" title="SP_Blog" type="application/atom+xml">
   
@@ -176,6 +176,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="zabbix-安装"><a href="#zabbix-安装" class="headerlink" title="zabbix 安装"></a>zabbix 安装</h3><p>一、 关闭防火墙和 关闭selinux防火墙<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl stop firewalld.service </span><br><span class="line">sudo setenforce 0</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>二、安装Zabbix rpm包仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -vhi http://repo.zabbix.com/zabbix/3.0/rhel/7/x86_64/zabbix-release-3.0-1.el7.noarch.rpm</span><br></pre></td></tr></table></figure></p>
 <p>三、安装zabbix-server-mysql和zabbix-web-mysql<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y zabbix-server-mysql zabbix-web-mysql zabbix-agent</span><br></pre></td></tr></table></figure></p>
 <p>四、安装并且启动mysql5.6及初始化数据库信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo  rpm -ivh http://repo.mysql.com/yum/mysql-5.6-community/el/6/x86_64/mysql-community-release-el6-5.noarch.rpm </span><br><span class="line">sudo yum install -y mysql-community-server </span><br><span class="line">sudo systemctl start mysqld</span><br><span class="line">sudo  /sbin/chkconfig mysqld on 或者 sudo systemctl enable mysqld</span><br><span class="line">sudo mysql_secure_installation #初始化数据库信息</span><br></pre></td></tr></table></figure></p>
@@ -429,11 +430,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color5">Archlinux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+                <a href="javascript:void(0)" class="js-tag color4">zip</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -449,15 +450,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Archlinux</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">zip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">交换机</a>
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -469,11 +466,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
+                <a href="javascript:void(0)" class="js-tag color4">交换机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -481,11 +474,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,6 +498,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
@@ -517,11 +518,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,15 +550,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">linux运维</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
