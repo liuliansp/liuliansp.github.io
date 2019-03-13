@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://liuliansp.github.io">
   <title>ArchLinux 解压文件乱码问题 | SP_Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="linux 解压zip文件乱码问题 安装unzip使用 1unzip -O CP936 &amp;lt;文件名&amp;gt; 1unzip -O GBK &amp;lt;文件名&amp;gt;">
-<meta name="keywords" content="Archlinux,zip">
+  <meta name="description" content="linux 解压zip文件乱码问题 安装unzip使用 1unzip -O CP936 &amp;lt;文件名&amp;gt; 1unzip -O GBK &amp;lt;文件名&amp;gt; rsync 传输文件参考地址   rsync特点可以镜像保存整个目录树和文件系统可以保留原有的权限(permission,mode)，owner,group,时间(修改时间,modify time)，软硬链接，文件acl,文件属性(at">
+<meta name="keywords" content="Archlinux,zip,rsync">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ArchLinux 解压文件乱码问题">
 <meta property="og:url" content="https://liuliansp.github.io/2018/08/10/ArchLinux-解压文件乱码问题/index.html">
 <meta property="og:site_name" content="SP_Blog">
-<meta property="og:description" content="linux 解压zip文件乱码问题 安装unzip使用 1unzip -O CP936 &amp;lt;文件名&amp;gt; 1unzip -O GBK &amp;lt;文件名&amp;gt;">
+<meta property="og:description" content="linux 解压zip文件乱码问题 安装unzip使用 1unzip -O CP936 &amp;lt;文件名&amp;gt; 1unzip -O GBK &amp;lt;文件名&amp;gt; rsync 传输文件参考地址   rsync特点可以镜像保存整个目录树和文件系统可以保留原有的权限(permission,mode)，owner,group,时间(修改时间,modify time)，软硬链接，文件acl,文件属性(at">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-10T07:28:41.008Z">
+<meta property="og:updated_time" content="2019-02-28T08:34:52.353Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ArchLinux 解压文件乱码问题">
-<meta name="twitter:description" content="linux 解压zip文件乱码问题 安装unzip使用 1unzip -O CP936 &amp;lt;文件名&amp;gt; 1unzip -O GBK &amp;lt;文件名&amp;gt;">
+<meta name="twitter:description" content="linux 解压zip文件乱码问题 安装unzip使用 1unzip -O CP936 &amp;lt;文件名&amp;gt; 1unzip -O GBK &amp;lt;文件名&amp;gt; rsync 传输文件参考地址   rsync特点可以镜像保存整个目录树和文件系统可以保留原有的权限(permission,mode)，owner,group,时间(修改时间,modify time)，软硬链接，文件acl,文件属性(at">
   
     <link rel="alternative" href="/atom.xml" title="SP_Blog" type="application/atom+xml">
   
@@ -179,6 +179,12 @@
 <p>安装unzip<br>使用</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip -O CP936 &lt;文件名&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip -O GBK &lt;文件名&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="rsync-传输文件"><a href="#rsync-传输文件" class="headerlink" title="rsync 传输文件"></a>rsync 传输文件</h3><p><a href="https://my.oschina.net/ccLlinux/blog/1859116" target="_blank" rel="noopener">参考地址</a> </p>
+<ul>
+<li>rsync特点<br>可以镜像保存整个目录树和文件系统<br>可以保留原有的权限(permission,mode)，owner,group,时间(修改时间,modify time)，软硬链接，文件acl,文件属性(attributes)信息等<br>传输效率高，使用同步算法，只比较变化的<br>支持匿名传输，方便网站镜像；也可以做验证，加强安全<br>操作：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync -av gg.jpg pi@10.10.30.201:/home/pi/gg.jpg</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">rsync常用选项</span><br><span class="line">-a 包含-rtplgoD</span><br><span class="line">-r 同步目录时要加上，类似cp时的-r选项</span><br><span class="line">-v 同步时显示一些信息，让我们知道同步的过程</span><br><span class="line">-l 保留软连接</span><br><span class="line">-L 加上该选项后，同步软链接时会把源文件给同步</span><br><span class="line">-p 保持文件的权限属性</span><br><span class="line">-o 保持文件的属主</span><br><span class="line">-g 保持文件的属组</span><br><span class="line">-D 保持设备文件信息</span><br><span class="line">-t 保持文件的时间属性</span><br><span class="line">--delete 删除DEST中SRC没有的文件</span><br><span class="line">--exclude 过滤指定文件，如--exclude “logs”会把文件名包含logs的文件或者目录过滤掉，不同步</span><br><span class="line">-P 显示同步过程，比如速率，比-v更加详细</span><br><span class="line">-u 加上该选项后，如果DEST中的文件比SRC新，则不同步</span><br><span class="line">-z 传输时压缩</span><br></pre></td></tr></table></figure>
       
 
       
@@ -222,6 +228,10 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">zip</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">rsync</a>
         		</li>
       		
 		</ul>
@@ -426,14 +436,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Archlinux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">zip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
@@ -462,11 +464,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">交换机</a>
+                <a href="javascript:void(0)" class="js-tag color5">Archlinux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">zip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">rsync</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">KVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">交换机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,14 +500,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VNC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
@@ -502,7 +508,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">VNC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,10 +536,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Navicat premium</a>
               </li>
              
@@ -534,15 +548,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">chm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">zabbix</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+                <a href="javascript:void(0)" class="js-tag color2">zabbix</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -555,6 +573,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
