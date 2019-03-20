@@ -155,6 +155,95 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Scrapy-Redis搭建分布式爬虫" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/20/Scrapy-Redis搭建分布式爬虫/">Scrapy+Redis搭建分布式爬虫</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/20/Scrapy-Redis搭建分布式爬虫/" class="archive-article-date">
+  	<time datetime="2019-03-20T14:01:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>环境 ArchLinux Pycharm</p>
+</blockquote>
+<h3 id="一、安装scrapy-redis"><a href="#一、安装scrapy-redis" class="headerlink" title="一、安装scrapy_redis"></a>一、安装scrapy_redis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd py</span><br><span class="line">pipenv shell</span><br><span class="line">pip3.7 install scrapy_redis</span><br></pre></td></tr></table></figure>
+<h3 id="二、启动Redis、Mongodb服务"><a href="#二、启动Redis、Mongodb服务" class="headerlink" title="二、启动Redis、Mongodb服务"></a>二、启动Redis、Mongodb服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start mongondb.service</span><br><span class="line">sudo systemctl start redis.service</span><br></pre></td></tr></table></figure>
+<h3 id="三、修改爬虫文件"><a href="#三、修改爬虫文件" class="headerlink" title="三、修改爬虫文件"></a>三、修改爬虫文件</h3><p>让爬虫文件继承父类RedisSpide并添加redis_key = ‘blogspider’<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BlogSpiderSpider</span><span class="params">(RedisSpider)</span>:</span></span><br><span class="line">    name = <span class="string">'blog_spider'</span></span><br><span class="line">    allowed_domains = [<span class="string">'www.kingname.info'</span>]</span><br><span class="line">    redis_key = <span class="string">'blogspider'</span></span><br><span class="line">    start_urls = [<span class="string">'http://www.kingname.info/archives/'</span>]</span><br><span class="line">    host=<span class="string">'http://www.kingname.info'</span></span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2019/03/20/Scrapy-Redis搭建分布式爬虫/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Scrapy</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/20/Scrapy-Redis搭建分布式爬虫/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-python学习scrapy（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -899,86 +988,6 @@
 
 
   
-    <article id="post-H3C交换机基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/17/H3C交换机基础/">H3C交换机基础</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/17/H3C交换机基础/" class="archive-article-date">
-  	<time datetime="2018-09-17T13:52:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>掌握交换机基本概念</li>
-<li>掌握交换机的基本配置</li>
-<li><h2 id="掌握以太网交换机常见的维护方式"><a href="#掌握以太网交换机常见的维护方式" class="headerlink" title="掌握以太网交换机常见的维护方式"></a>掌握以太网交换机常见的维护方式</h2><h3 id="VLAN的基本概念"><a href="#VLAN的基本概念" class="headerlink" title="VLAN的基本概念"></a>VLAN的基本概念</h3>Virtual Local Area Network(虚拟局域网)<blockquote>
-<p>是将位于不同的网段上的用户和服务器从从逻辑上划分成终端站组<br><strong>VLAN的出发点:</strong><br>1.限制广播包<br>2.安全性<br>3.减少移动和改变的代价<br>4.虚拟工作组</p></blockquote></li></ul>
-        
-          <a class="article-more-a" href="/2018/09/17/H3C交换机基础/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">交换机</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/17/H3C交换机基础/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1221,6 +1230,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Scrapy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
             
             <div class="clearfix"></div>
