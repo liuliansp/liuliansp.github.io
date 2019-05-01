@@ -155,6 +155,295 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Oracle事物控制语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/01/Oracle事物控制语句/">Oracle事物控制语句</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/01/Oracle事物控制语句/" class="archive-article-date">
+  	<time datetime="2019-05-01T08:04:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="事务控制语句：TCL-Transaction-Control-Language"><a href="#事务控制语句：TCL-Transaction-Control-Language" class="headerlink" title="事务控制语句：TCL Transaction Control Language"></a>事务控制语句：TCL Transaction Control Language</h3><ol>
+<li>事务是最小的工作单元，它作为一个整体进行操作，此工作单元中的语句要么全部完成，</li>
+</ol>
+<p>要么全部失败不允许部分完成和部分失败<br></p>
+        
+          <a class="article-more-a" href="/2019/05/01/Oracle事物控制语句/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/01/Oracle事物控制语句/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Oracle-授权和回收授权grant和revoke" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/01/Oracle-授权和回收授权grant和revoke/">Oracle 授权和回收授权grant和revoke</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/01/Oracle-授权和回收授权grant和revoke/" class="archive-article-date">
+  	<time datetime="2019-05-01T08:01:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.GRANT 赋于权限 </p>
+<p>常用的系统权限集合有以下三个: </p>
+<p>CONNECT(基本的连接), RESOURCE(程序开发), DBA(数据库管理) </p>
+<p>常用的数据对象权限有以下五个: </p>
+<p>ALL ON 数据对象名, SELECT ON 数据对象名, UPDATE ON 数据对象名, </p>
+<p>DELETE ON 数据对象名, INSERT ON 数据对象名, ALTER ON 数据对象名 </p>
+<p>GRANT CONNECT, RESOURCE TO 用户名; </p>
+<p>GRANT SELECT ON 表名 TO 用户名; </p>
+<p>GRANT SELECT, INSERT, DELETE ON表名 TO 用户名1, 用户名2; </p>
+<p>2.REVOKE 回收权限 </p>
+<p>REVOKE CONNECT, RESOURCE FROM 用户名; </p>
+<p>REVOKE SELECT ON 表名 FROM 用户名; </p>
+<p>REVOKE SELECT, INSERT, DELETE ON 表名 FROM 用户名1, 用户名2; </p>
+<p>授权 </p>
+<p>–select * from dba_users; 查询数据库中的所有用户 </p>
+<p>–alter user TEST_SELECT account lock; 锁住用户 </p>
+<p>–alter user TEST_SELECT account unlock; 给用户解锁 </p>
+<p>–create user xujin identified by   xujin; 建立用户 </p>
+<p>–grant create tablespace to xujin; 授权 </p>
+<p>–grant select on tabel1 to xujin; 授权查询 </p>
+<p>–grant update on table1 to xujin; </p>
+<p>–grant execute on procedure1 to xujin 授权存储过程 </p>
+<p>–grant update on table1 to xujin with grant option; 授权更新权限转移给xujin用户，许进用户可以继续授权； </p>
+<p>收回权限 </p>
+<p>–revoke select on table1 from xujin1; 收回查询select表的权限； </p>
+<p>–revoke all on table1 from xujin; </p>
+<p>/*grant connect to xujin; </p>
+<p>revoke connect from xujin </p>
+<p>grant select on xezf.cfg_alarm to xujin; </p>
+<p>revoke select on xezf.cfg_alarm from xujin;*/ </p>
+<p>–select table_name,privilege from dba_tab_privs where grantee=’xujin’ 查询一个用户拥有的对象权限 </p>
+<p>–select * from dba_sys_privs where grantee=’xujin’ 查询一个用户拥有的系统权限 </p>
+<p>–select * from session_privs –当钱会话有效的系统权限 </p>
+<p>创建角色 </p>
+<p>–create role xujin1;–建立xujin1角色 </p>
+<p>–grant insert on xezf.cfg_alarm to xujin1; 将插入表的信息 </p>
+<p>–revoke insert on xezf.cfg_alarm from xujin1; 收回xujin1角色的权限 </p>
+<p>–grant xujin1 to xujin ; 将角色的权限授权给xujin; </p>
+<p>– create role xujin2; </p>
+<p>–grant xujin1 to xujin2; 将角色xujin1授权给xujin2; </p>
+<p>–alter user xujin default xujin1,xujin2; 修改用户默认角色 </p>
+<p>删除角色 </p>
+<p>– DROP ROLE xujin1;删除角色1； </p>
+<p>–select * from role_sys_privs where role=xujin1; </p>
+<p>查看许进1角色下有什么系统权限； </p>
+<p>–select granted_role,admin_option from role_role_privs where role=’xujin2’; </p>
+<p>–查看xujin1角色下面有什么角色权限 </p>
+<p>–select * from role_sys_privs where role=’xujin2’; </p>
+<p>–select table_name,privilege from role_tab_privs where role=’xujin1’; </p>
+<p>–select * from dba_role_privs where grantee=’xujin’ –查看用户下面有多少个角色； </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/01/Oracle-授权和回收授权grant和revoke/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-python之Oracle学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/25/python之Oracle学习/">python之Oracle学习</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/25/python之Oracle学习/" class="archive-article-date">
+  	<time datetime="2019-04-24T16:03:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Python之Oracle"><a href="#Python之Oracle" class="headerlink" title="Python之Oracle"></a>Python之Oracle</h3><ol>
+<li><p>简单查询操作</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cx_Oracle</span><br><span class="line"><span class="comment">#创建数据库连接</span></span><br><span class="line">conn = cx_Oracle.connect(<span class="string">'dbuser/password@servername/sid'</span>)</span><br><span class="line"><span class="comment">#获取操作游标</span></span><br><span class="line">cursor = conn.cursor()</span><br><span class="line"><span class="comment">#执行查询SQL，返回值1</span></span><br><span class="line">cursor.execute(<span class="string">"""select 1 from dual"""</span>)</span><br><span class="line"><span class="comment">#获取返回结果一条记录</span></span><br><span class="line">rs = cursor.fetchone()</span><br><span class="line"><span class="comment">#执行完成，打印提示信息</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'result = %s'</span>%rs</span><br><span class="line">result = <span class="number">1</span></span><br><span class="line"><span class="comment">#关闭连接，释放资源</span></span><br><span class="line">cursor.close()</span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行DDL建表操作</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cursor.execute(<span class="string">'creat table tmp_user(id number,name varchar2(20))'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+        
+          <a class="article-more-a" href="/2019/04/25/python之Oracle学习/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/25/python之Oracle学习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-windows10-安装mitmproxy及配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -735,258 +1024,6 @@
 
 
   
-    <article id="post-Docker-学习（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/22/Docker-学习（二）/">Docker 学习笔记（二）</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/22/Docker-学习（二）/" class="archive-article-date">
-  	<time datetime="2019-03-22T09:17:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="普通用户权限使用Docker设置"><a href="#普通用户权限使用Docker设置" class="headerlink" title="普通用户权限使用Docker设置"></a>普通用户权限使用Docker设置</h3><p>$ sudo groupadd docker &amp;&amp; sudo gpasswd -a ${USER} docker &amp;&amp; sudo systemctl restart docker<br>$ newgrp docker</p>
-<h3 id="添加阿里镜像云到docker"><a href="#添加阿里镜像云到docker" class="headerlink" title="添加阿里镜像云到docker"></a>添加阿里镜像云到docker</h3><p><a href="https://account.aliyun.com" target="_blank" rel="noopener">阿里登陆</a><br>里面有镜像加速设置方法！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/22/Docker-学习（二）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Scrapy-Redis搭建分布式爬虫" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/20/Scrapy-Redis搭建分布式爬虫/">Scrapy+Redis搭建分布式爬虫</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/20/Scrapy-Redis搭建分布式爬虫/" class="archive-article-date">
-  	<time datetime="2019-03-20T14:01:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>环境 ArchLinux Pycharm</p>
-</blockquote>
-<h3 id="一、安装scrapy-redis"><a href="#一、安装scrapy-redis" class="headerlink" title="一、安装scrapy_redis"></a>一、安装scrapy_redis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd py</span><br><span class="line">pipenv shell</span><br><span class="line">pip3.7 install scrapy_redis</span><br></pre></td></tr></table></figure>
-<h3 id="二、启动Redis、Mongodb服务"><a href="#二、启动Redis、Mongodb服务" class="headerlink" title="二、启动Redis、Mongodb服务"></a>二、启动Redis、Mongodb服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start mongondb.service</span><br><span class="line">sudo systemctl start redis.service</span><br></pre></td></tr></table></figure>
-<h3 id="三、修改爬虫文件"><a href="#三、修改爬虫文件" class="headerlink" title="三、修改爬虫文件"></a>三、修改爬虫文件</h3><p>让爬虫文件继承父类RedisSpide并添加redis_key = ‘blogspider’<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BlogSpiderSpider</span><span class="params">(RedisSpider)</span>:</span></span><br><span class="line">    name = <span class="string">'blog_spider'</span></span><br><span class="line">    allowed_domains = [<span class="string">'www.kingname.info'</span>]</span><br><span class="line">    redis_key = <span class="string">'blogspider'</span></span><br><span class="line">    start_urls = [<span class="string">'http://www.kingname.info/archives/'</span>]</span><br><span class="line">    host=<span class="string">'http://www.kingname.info'</span></span><br></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2019/03/20/Scrapy-Redis搭建分布式爬虫/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Scrapy</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/20/Scrapy-Redis搭建分布式爬虫/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python学习scrapy（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/25/python学习scrapy（二）/">python学习scrapy（二）</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/25/python学习scrapy（二）/" class="archive-article-date">
-  	<time datetime="2019-02-25T01:49:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Python-数据处理库pandas学习"><a href="#Python-数据处理库pandas学习" class="headerlink" title="Python 数据处理库pandas学习"></a>Python 数据处理库pandas学习</h3><blockquote>
-<p>pandas 提供了快速，灵活和富有表现力的数据结构，目的是使“关系”或“标记“数据的工作既简单又直观。它旨在成为在Python中进行实际数据分析的高级构建块。</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">scrapy</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">pandas</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/25/python学习scrapy（二）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1132,7 +1169,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">交换机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">KVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1144,7 +1189,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KVM</a>
+                <a href="javascript:void(0)" class="js-tag color5">PACS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1152,7 +1197,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">PACS</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1160,15 +1205,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracel</a>
+                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1184,15 +1225,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">VNC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VNC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1216,22 +1257,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">mitmproxy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Navicat premium</a>
               </li>
              
@@ -1244,7 +1269,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">chm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">zabbix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">mitmproxy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1253,14 +1298,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">chm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1273,6 +1310,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
             
             <div class="clearfix"></div>
